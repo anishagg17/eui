@@ -118,7 +118,7 @@ function compileBundle() {
     files: ['themes.ts'],
     resolveModuleId() {
       return '@elastic/eui/dist/eui_charts_theme';
-    }
+    },
   });
   console.log(chalk.green('✔ Finished chart theme module'));
 }

@@ -41,7 +41,9 @@ async function deriveSassVariableTypes(
       ts.createSourceFile(extractedVarTypesFilename, '', ts.ScriptTarget.Latest)
     );
 
-  const prettierOptions = await prettier.resolveConfig(extractedVarTypesFilename);
+  const prettierOptions = await prettier.resolveConfig(
+    extractedVarTypesFilename
+  );
   const prettifiedModuleSource = prettier.format(moduleSource, prettierOptions);
 
   return prettifiedModuleSource;

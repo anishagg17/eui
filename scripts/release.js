@@ -15,10 +15,10 @@ const TYPE_PATCH = 2;
 const humanReadableTypes = {
   [TYPE_MAJOR]: 'major',
   [TYPE_MINOR]: 'minor',
-  [TYPE_PATCH]: 'patch'
+  [TYPE_PATCH]: 'patch',
 };
 
-(async function () {
+(async function() {
   // make sure the release script is being run by npm (required for `npm publish` step)
   // https://github.com/yarnpkg/yarn/issues/5063
   const packageManagerScript = path.basename(process.env.npm_execpath);
@@ -58,7 +58,7 @@ const humanReadableTypes = {
 
   // update docs, git commit, git push
   execSync('npm run sync-docs', execOptions);
-}()).catch(e => console.error(e));
+})().catch(e => console.error(e));
 
 async function ensureMasterBranch() {
   const repo = await git.Repository.open(cwd);
@@ -66,7 +66,9 @@ async function ensureMasterBranch() {
   const currentBranchName = currentBranch.shorthand();
 
   if (currentBranchName !== 'master') {
-    console.error(`Unable to release: currently on branch "${currentBranchName}", expected "master"`);
+    console.error(
+      `Unable to release: currently on branch "${currentBranchName}", expected "master"`
+    );
     process.exit(1);
   }
 }
@@ -78,7 +80,9 @@ async function getVersionTypeFromChangelog() {
 
   // Sanity check, if the changelog contains "No public interface changes"then we shouldn't be releasing
   if (changelog.indexOf('No public interface changes') !== -1) {
-    console.error('Unable to release: CHANGELOG.md indicates "No public interface changes"');
+    console.error(
+      'Unable to release: CHANGELOG.md indicates "No public interface changes"'
+    );
     process.exit(1);
   }
 
@@ -96,15 +100,19 @@ async function getVersionTypeFromChangelog() {
   const [, unreleasedchanges] = changelog.match(/##.+?[\r\n]+(.+?)[\r\n]+##/su);
 
   // these changes contain bug fixes if the string "**bug fixes**" exists
-  const hasBugFixes = unreleasedchanges.toLowerCase().indexOf('**bug fixes**') !== -1;
+  const hasBugFixes =
+    unreleasedchanges.toLowerCase().indexOf('**bug fixes**') !== -1;
 
   // by convention, non-bug changes are listed first
   // this checks if a markdown list character "-" exists before the "bug fixes" string,
   // which indicates that there are other changes than bug fixes
-  const hasFeaturesWithBugFixes = !!unreleasedchanges.match(/.*-.*bug fixes/isu);
+  const hasFeaturesWithBugFixes = !!unreleasedchanges.match(
+    /.*-.*bug fixes/isu
+  );
 
   // breaking changes are described under a "**breaking changes**" string
-  const hasBreakingChanges = unreleasedchanges.toLowerCase().indexOf('**breaking changes**') !== -1;
+  const hasBreakingChanges =
+    unreleasedchanges.toLowerCase().indexOf('**breaking changes**') !== -1;
 
   // default to a MINOR bump (new features, may have bug fixes, no breaking changes)
   let recommendedType = TYPE_MINOR;
@@ -120,12 +128,22 @@ async function getVersionTypeFromChangelog() {
   }
 
   const humanReadableRecommendation = humanReadableTypes[recommendedType];
-  console.log(chalk.magenta('Detected the following unreleased changes from CHANGELOG.md'));
+  console.log(
+    chalk.magenta('Detected the following unreleased changes from CHANGELOG.md')
+  );
   console.log('');
   console.log(chalk.gray(unreleasedchanges));
   console.log('');
-  console.log(`${chalk.magenta('The recommended version update for these changes is')} ${chalk.blue(humanReadableRecommendation)}`);
-  console.log(`${chalk.magenta('What part of the package version do you want to bump?')} ${chalk.gray('(major, minor, patch)')}`);
+  console.log(
+    `${chalk.magenta(
+      'The recommended version update for these changes is'
+    )} ${chalk.blue(humanReadableRecommendation)}`
+  );
+  console.log(
+    `${chalk.magenta(
+      'What part of the package version do you want to bump?'
+    )} ${chalk.gray('(major, minor, patch)')}`
+  );
 
   return await promptUserForVersionType();
 }
@@ -142,9 +160,9 @@ async function promptUserForVersionType() {
             description: 'choice:',
             pattern: /^(major|minor|patch)$/,
             message: 'Your choice must be major, minor or patch',
-            required: true
+            required: true,
           },
-        }
+        },
       },
       (err, { version }) => {
         if (err) {
@@ -158,10 +176,18 @@ async function promptUserForVersionType() {
 }
 
 async function getOneTimePassword() {
-  const version = require('../package.json').version
-  console.log(chalk.magenta(`Preparing to publish @elastic/eui@${version} to npm registry`));
+  const version = require('../package.json').version;
+  console.log(
+    chalk.magenta(
+      `Preparing to publish @elastic/eui@${version} to npm registry`
+    )
+  );
   console.log('');
-  console.log(chalk.magenta('The @elastic organization requires membership and 2FA to publish'));
+  console.log(
+    chalk.magenta(
+      'The @elastic organization requires membership and 2FA to publish'
+    )
+  );
   console.log(chalk.magenta('What is your one-time password?'));
 
   return await promptUserForOneTimePassword();
@@ -178,9 +204,9 @@ async function promptUserForOneTimePassword() {
           otp: {
             description: 'Enter password:',
             message: 'One-time password is required',
-            required: true
+            required: true,
           },
-        }
+        },
       },
       (err, { otp }) => {
         if (err) {

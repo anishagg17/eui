@@ -93,7 +93,6 @@ function transformVars(varsObj) {
 
 module.exports = {
   run: () => ({
-    postExtract: extractedVariables =>
-      transformVars(extractedVariables.global),
+    postExtract: extractedVariables => transformVars(extractedVariables.global),
   }),
 };
