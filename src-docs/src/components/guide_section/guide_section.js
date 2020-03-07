@@ -19,6 +19,7 @@ import {
   EuiTitle,
   EuiLink,
 } from '../../../../src/components';
+import LiveDemo from './LiveDemo'
 
 function markup(text) {
   const regex = /(#[a-zA-Z]+)|(`[^`]+`)/g;
@@ -66,7 +67,7 @@ const humanizeType = type => {
         const unionValues = type.value.map(({ name }) => name);
         unionValues[unionValues.length - 1] = `or ${
           unionValues[unionValues.length - 1]
-        }`;
+          }`;
 
         if (unionValues.length > 2) {
           humanizedType = unionValues.join(', ');
@@ -107,6 +108,11 @@ export class GuideSection extends Component {
     }
 
     if (props.source) {
+      this.tabs.push({
+        name: 'live_demo',
+        displayName: 'Live Demo',
+        isCode: false,
+      });
       this.tabs.push(
         {
           name: 'javascript',
@@ -136,25 +142,35 @@ export class GuideSection extends Component {
       });
     }
 
+
+
     this.state = {
       selectedTab: this.tabs.length > 0 ? this.tabs[0] : undefined,
-      renderedCode: null,
+      renderedCode: null, liveDemoScope: null,
+
     };
 
     this.memoScroll = 0;
   }
 
   onSelectedTabChanged = selectedTab => {
-    const { name } = selectedTab;
+    let { name } = selectedTab;
     let renderedCode = null;
+    if (name === 'html' || name === 'javascript' || name === 'live_demo') {
+      let code;
 
-    if (name === 'html' || name === 'javascript') {
-      const { code } = this.props.source.find(
+
+      if (name === 'live_demo')
+        code = this.props.source.find(
+          sourceObject => sourceObject.type === "javascript"
+        ).code;
+      else code = this.props.source.find(
         sourceObject => sourceObject.type === name
-      );
+      ).code;
+
       renderedCode = code;
 
-      if (name === 'javascript') {
+      if (name === 'javascript' || name == 'live_demo') {
         renderedCode = renderedCode
           .replace(
             /(from )'(..\/)+src\/components(\/?';)/g,
@@ -490,7 +506,15 @@ export class GuideSection extends Component {
     if (this.state.selectedTab.name === 'props') {
       return <EuiErrorBoundary>{this.renderProps()}</EuiErrorBoundary>;
     }
-
+    if (this.state.selectedTab.name === 'live_demo') {
+      return (
+        <EuiErrorBoundary>
+          <LiveDemo
+            code={this.state.renderedCode}
+          />
+        </EuiErrorBoundary>
+      );
+    }
     return (
       <EuiErrorBoundary>
         <div>

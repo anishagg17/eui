@@ -1,0 +1,31 @@
+
+.LiveDemoFlexItem{
+    border:2px solid $euiColorPrimary;
+    min-width:300px ;
+    height: 400px !important;
+    background-color: $euiColorPrimary;
+  }
+  .LiveDemoFlexGroup{
+    margin-top: 0px !important;
+  }
+  .LiveDemoPreview{
+    width:fit-content;
+    height: fit-content;
+  }
+  
+  .LiveDemoPreviewWrapper{
+    @include euiScrollBar;
+    height:100%;
+    width:100%;
+    overflow: scroll;
+    padding: 10px;
+    background-color: white;
+    scrollbar-width: thin !important;
+  
+  }
+  .LiveDemoEditor >  .ace_scrollbar-v{
+    right:4px;
+  }
+  .LiveDemoEditor > .ace_scrollbar-h{
+    bottom: 4px;
+  }
