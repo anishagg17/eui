@@ -17,91 +17,94 @@ import {
   EuiButtonIcon,
 } from '../../../../src/components';
 
-const repeatableForm = (
-  <EuiForm>
-    <EuiFlexGroup>
-      <EuiFlexItem>
-        <EuiFormRow label="Username">
-          <EuiFieldText icon="user" placeholder="John" />
-        </EuiFormRow>
-      </EuiFlexItem>
 
-      <EuiFlexItem>
-        <EuiFormRow
-          label="Password"
-          helpText="Must include one number and one symbol">
-          <EuiFieldPassword icon="lock" />
-        </EuiFormRow>
-      </EuiFlexItem>
-    </EuiFlexGroup>
 
-    <EuiSpacer size="m" />
+export default () => {
+  const repeatableForm = (
+    <EuiForm>
+      <EuiFlexGroup>
+        <EuiFlexItem>
+          <EuiFormRow label="Username">
+            <EuiFieldText icon="user" placeholder="John" />
+          </EuiFormRow>
+        </EuiFlexItem>
 
-    <EuiFormRow label="Body">
-      <EuiTextArea placeholder="I am a textarea, put some content in me!" />
-    </EuiFormRow>
-  </EuiForm>
-);
+        <EuiFlexItem>
+          <EuiFormRow
+            label="Password"
+            helpText="Must include one number and one symbol">
+            <EuiFieldPassword icon="lock" />
+          </EuiFormRow>
+        </EuiFlexItem>
+      </EuiFlexGroup>
 
-const buttonContent = (
-  <div>
-    <EuiFlexGroup gutterSize="s" alignItems="center" responsive={false}>
-      <EuiFlexItem grow={false}>
-        <EuiIcon type="logoWebhook" size="m" />
-      </EuiFlexItem>
+      <EuiSpacer size="m" />
 
-      <EuiFlexItem>
-        <EuiTitle size="s" className="euiAccordionForm__title">
-          <h3>Webhook</h3>
-        </EuiTitle>
-      </EuiFlexItem>
-    </EuiFlexGroup>
+      <EuiFormRow label="Body">
+        <EuiTextArea placeholder="I am a textarea, put some content in me!" />
+      </EuiFormRow>
+    </EuiForm>
+  );
 
-    <EuiText size="s">
-      <p>
-        <EuiTextColor color="subdued">
-          Will send a POST request to www.example.com/some/path/
+  const buttonContent = (
+    <div>
+      <EuiFlexGroup gutterSize="s" alignItems="center" responsive={false}>
+        <EuiFlexItem grow={false}>
+          <EuiIcon type="logoWebhook" size="m" />
+        </EuiFlexItem>
+
+        <EuiFlexItem>
+          <EuiTitle size="s" className="euiAccordionForm__title">
+            <h3>Webhook</h3>
+          </EuiTitle>
+        </EuiFlexItem>
+      </EuiFlexGroup>
+
+      <EuiText size="s">
+        <p>
+          <EuiTextColor color="subdued">
+            Will send a POST request to www.example.com/some/path/
         </EuiTextColor>
-      </p>
-    </EuiText>
-  </div>
-);
+        </p>
+      </EuiText>
+    </div>
+  );
 
-const extraAction = (
-  <EuiButtonIcon
-    iconType="cross"
-    color="danger"
-    className="euiAccordionForm__extraAction"
-    aria-label="Delete"
-  />
-);
+  const extraAction = (
+    <EuiButtonIcon
+      iconType="cross"
+      color="danger"
+      className="euiAccordionForm__extraAction"
+      aria-label="Delete"
+    />
+  );
+  return (
+    <div>
+      <EuiTitle size="s">
+        <h3>I am a complicated, highly styled, repeatable form!</h3>
+      </EuiTitle>
 
-export default () => (
-  <div>
-    <EuiTitle size="s">
-      <h3>I am a complicated, highly styled, repeatable form!</h3>
-    </EuiTitle>
+      <EuiSpacer size="l" />
 
-    <EuiSpacer size="l" />
+      <EuiAccordion
+        id="accordionForm1"
+        className="euiAccordionForm"
+        buttonClassName="euiAccordionForm__button"
+        buttonContent={buttonContent}
+        extraAction={extraAction}
+        paddingSize="l">
+        {repeatableForm}
+      </EuiAccordion>
 
-    <EuiAccordion
-      id="accordionForm1"
-      className="euiAccordionForm"
-      buttonClassName="euiAccordionForm__button"
-      buttonContent={buttonContent}
-      extraAction={extraAction}
-      paddingSize="l">
-      {repeatableForm}
-    </EuiAccordion>
-
-    <EuiAccordion
-      id="accordionForm2"
-      className="euiAccordionForm"
-      buttonClassName="euiAccordionForm__button"
-      buttonContent={buttonContent}
-      extraAction={extraAction}
-      paddingSize="l">
-      {repeatableForm}
-    </EuiAccordion>
-  </div>
-);
+      <EuiAccordion
+        id="accordionForm2"
+        className="euiAccordionForm"
+        buttonClassName="euiAccordionForm__button"
+        buttonContent={buttonContent}
+        extraAction={extraAction}
+        paddingSize="l">
+        {repeatableForm}
+      </EuiAccordion>
+    </div>
+  )
+};

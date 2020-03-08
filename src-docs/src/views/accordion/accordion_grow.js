@@ -13,9 +13,16 @@ import {
 import { htmlIdGenerator } from '../../../../src/services';
 
 class Rows extends Component {
-  state = {
-    counter: 1,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 1,
+    };
+
+    ['onIncrease', 'onDecrease'].forEach(method => {
+      this[method] = this[method].bind(this)
+    })
+  }
 
   onIncrease() {
     this.setState(prevState => ({
