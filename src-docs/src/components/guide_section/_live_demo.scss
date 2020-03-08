@@ -3,14 +3,16 @@
     border:2px solid $euiColorPrimary;
     min-width:300px ;
     height: 400px !important;
-    background-color: $euiColorPrimary;
+    background-color: $euiColorPrimary;    margin-top: 0px !important;
+
   }
   .LiveDemoFlexGroup{
     margin-top: 0px !important;
   }
   .LiveDemoPreview{
     width:fit-content;
-    height: fit-content;
+    height: fit-content;    margin-top: 0px !important;
+
   }
   
   .LiveDemoPreviewWrapper{
@@ -21,7 +23,8 @@
     padding: 10px;
     background-color: white;
     scrollbar-width: thin !important;
-  
+    margin-top: 0px !important;
+
   }
   .LiveDemoEditor >  .ace_scrollbar-v{
     right:4px;
@@ -29,3 +32,11 @@
   .LiveDemoEditor > .ace_scrollbar-h{
     bottom: 4px;
   }
+
+  .liveError{
+
+    background: #521c0f;
+    color: #FFF;
+    font-family: "Roboto Mono", Consolas, Menlo, Courier, monospace;
+  }
+  

@@ -133,21 +133,25 @@ export default class extends Component {
       toggleIconIdToSelectedMapIcon: {},
       toggleCompressedIdSelected: `${idPrefix2}4`,
     };
+
+    ['onChange', 'onChangeIconsMultiIcons', 'onChangeDisabled', 'onChangeMulti', 'onChangeIcons', 'onChangeCompressed', 'onChangeIconsMulti'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  onChange = optionId => {
+  onChange(optionId) {
     this.setState({
       toggleIdSelected: optionId,
     });
   };
 
-  onChangeDisabled = optionId => {
+  onChangeDisabled(optionId) {
     this.setState({
       toggleIdDisabled: optionId,
     });
   };
 
-  onChangeMulti = optionId => {
+  onChangeMulti(optionId) {
     const newToggleIdToSelectedMap = {
       ...this.state.toggleIdToSelectedMap,
       ...{
@@ -160,19 +164,19 @@ export default class extends Component {
     });
   };
 
-  onChangeIcons = optionId => {
+  onChangeIcons(optionId) {
     this.setState({
       toggleIconIdSelected: optionId,
     });
   };
 
-  onChangeCompressed = optionId => {
+  onChangeCompressed(optionId) {
     this.setState({
       toggleCompressedIdSelected: optionId,
     });
   };
 
-  onChangeIconsMulti = optionId => {
+  onChangeIconsMulti(optionId) {
     const newToggleIconIdToSelectedMap = {
       ...this.state.toggleIconIdToSelectedMap,
       ...{
@@ -185,7 +189,7 @@ export default class extends Component {
     });
   };
 
-  onChangeIconsMultiIcons = optionId => {
+  onChangeIconsMultiIcons(optionId) {
     const newToggleIconIdToSelectedMapIcon = {
       ...this.state.toggleIconIdToSelectedMapIcon,
       ...{

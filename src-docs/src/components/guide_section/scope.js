@@ -1,3 +1,4 @@
+import { Fragment, Component } from 'react';
 import {
   EuiCode,
   EuiCodeBlock,
@@ -22,11 +23,12 @@ import {
   EuiButtonIcon,
   EuiFlexGrid,
   EuiPanel,
-  EuiIcon,
+  EuiIcon, EuiButtonToggle,
 } from '../../../../src/components';
-import { Fragment } from 'react';
 
 const scope = {
+  EuiButtonToggle,
+  Component,
   EuiCode,
   EuiCodeBlock,
   EuiErrorBoundary,

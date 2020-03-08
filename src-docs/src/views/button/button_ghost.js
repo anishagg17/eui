@@ -16,9 +16,10 @@ export default class extends Component {
     this.state = {
       toggle0On: false,
     };
+    this.onToggle0Change = this.onToggle0Change.bind(this)
   }
 
-  onToggle0Change = e => {
+  onToggle0Change(e) {
     this.setState({ toggle0On: e.target.checked });
   };
 

@@ -73,7 +73,7 @@ function Live({ live, onEdit }) {
                 <EuiFlexItem className="LiveDemoFlexItem">
                     <div className="LiveDemoPreviewWrapper">  <LivePreview /></div></EuiFlexItem>
             </EuiFlexGroup>
-            <pre style={{ color: "#fa7777" }}>{live.error}</pre>
+            <pre className="liveError">{live.error}</pre>
         </>
     );
 }

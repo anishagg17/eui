@@ -17,17 +17,20 @@ export default class extends Component {
       toggle3On: true,
       toggle4On: true,
     };
+    ['onToggle0Change', 'onToggle1Change', 'onToggle4Change'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  onToggle0Change = e => {
+  onToggle0Change(e) {
     this.setState({ toggle0On: e.target.checked });
   };
 
-  onToggle1Change = e => {
+  onToggle1Change(e) {
     this.setState({ toggle1On: e.target.checked });
   };
 
-  onToggle4Change = e => {
+  onToggle4Change(e) {
     this.setState({ toggle4On: e.target.checked });
   };
 
