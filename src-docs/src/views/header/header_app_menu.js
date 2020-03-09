@@ -15,15 +15,17 @@ export default class extends Component {
     this.state = {
       isOpen: false,
     };
+    this.onMenuButtonClick = this.onMenuButtonClick.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
   }
 
-  onMenuButtonClick = () => {
+  onMenuButtonClick() {
     this.setState({
       isOpen: !this.state.isOpen,
     });
   };
 
-  closeMenu = () => {
+  closeMenu() {
     this.setState({
       isOpen: false,
     });

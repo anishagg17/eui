@@ -59,25 +59,28 @@ export default class extends Component {
       selectedSpace: this.spaces.filter(option => option.checked)[0],
       isOpen: false,
     };
+    ['onMenuButtonClick', 'addMoreSpaces', 'closePopover', 'onChange'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  isListExtended = () => {
+  isListExtended() {
     return this.state.spaces.length > 4 ? true : false;
   };
 
-  onMenuButtonClick = () => {
+  onMenuButtonClick() {
     this.setState({
       isOpen: !this.state.isOpen,
     });
   };
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isOpen: false,
     });
   };
 
-  onChange = options => {
+  onChange(options) {
     this.setState({
       spaces: options,
       selectedSpace: options.filter(option => option.checked)[0],
@@ -85,7 +88,7 @@ export default class extends Component {
     });
   };
 
-  addMoreSpaces = () => {
+  addMoreSpaces() {
     this.setState({
       spaces: this.spaces.concat(this.additionalSpaces),
     });
