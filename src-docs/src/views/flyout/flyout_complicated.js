@@ -22,7 +22,7 @@ import {
 
 import SuperSelectComplexExample from '../super_select/super_select_complex';
 
-export class FlyoutComplicated extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -45,6 +45,9 @@ export class FlyoutComplicated extends Component {
 
     this.closeFlyout = this.closeFlyout.bind(this);
     this.showFlyout = this.showFlyout.bind(this);
+    this.togglePopover = this.togglePopover.bind(this);
+    this.onSelectedTabChanged = this.onSelectedTabChanged.bind(this);
+    this.closePopover = this.closePopover.bind(this);
   }
 
   closeFlyout() {
@@ -55,15 +58,15 @@ export class FlyoutComplicated extends Component {
     this.setState({ isFlyoutVisible: true });
   }
 
-  closePopover = () => {
+  closePopover() {
     this.setState({ isPopoverOpen: false });
   };
 
-  togglePopover = () => {
+  togglePopover() {
     this.setState(({ isPopoverOpen }) => ({ isPopoverOpen: !isPopoverOpen }));
   };
 
-  onSelectedTabChanged = id => {
+  onSelectedTabChanged(id) {
     this.setState({
       selectedTabId: id,
     });

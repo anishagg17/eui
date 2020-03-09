@@ -16,7 +16,7 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-export class FlyoutMaxWidth extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -34,7 +34,7 @@ export class FlyoutMaxWidth extends Component {
     this.setState({ isFlyoutVisible: false });
   }
 
-  showFlyout = (size = 'm', maxWidth = false) => {
+  showFlyout(size = 'm', maxWidth = false) {
     this.setState({
       flyoutSize: size,
       flyoutMaxWidth: maxWidth,

@@ -31,9 +31,19 @@ import {
   EuiFieldPassword,
   EuiFieldText,
   EuiTextArea,
+  EuiFlyout,
+  EuiFlyoutBody,
+  EuiFlyoutHeader,
+  EuiPopover,
+  EuiCallOut,
 } from '../../../../src/components';
 
 const scope = {
+  EuiPopover,
+  EuiCallOut,
+  EuiFlyout,
+  EuiFlyoutBody,
+  EuiFlyoutHeader,
   EuiFieldPassword,
   EuiFieldText,
   EuiTextArea,
