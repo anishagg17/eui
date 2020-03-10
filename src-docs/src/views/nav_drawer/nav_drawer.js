@@ -100,7 +100,7 @@ export default class extends Component {
                 color: 'subdued',
                 iconType: 'starFilled',
                 iconSize: 's',
-                'aria-label': 'Remove from favorites',
+                'aria-label': 'Remove  favorites',
                 alwaysShow: true,
               },
             },
@@ -112,7 +112,7 @@ export default class extends Component {
                 color: 'subdued',
                 iconType: 'starFilled',
                 iconSize: 's',
-                'aria-label': 'Remove from favorites',
+                'aria-label': 'Remove  favorites',
                 alwaysShow: true,
               },
             },
@@ -385,9 +385,11 @@ export default class extends Component {
         },
       },
     ];
+    this.toggleFullScreen = this.toggleFullScreen.bind(this)
+    this.closeFullScreen = this.closeFullScreen.bind(this)
   }
 
-  onKeyDown = event => {
+  onKeyDown(event) {
     if (event.keyCode === keyCodes.ESCAPE) {
       //   event.preventDefault();
       //   event.stopPropagation();
@@ -395,13 +397,13 @@ export default class extends Component {
     }
   };
 
-  toggleFullScreen = () => {
+  toggleFullScreen() {
     this.setState(prevState => ({
       isFullScreen: !prevState.isFullScreen,
     }));
   };
 
-  closeFullScreen = () => {
+  closeFullScreen() {
     this.setState({
       isFullScreen: false,
     });
@@ -471,7 +473,7 @@ export default class extends Component {
     return <EuiHeaderBreadcrumbs breadcrumbs={breadcrumbs} />;
   }
 
-  setNavDrawerRef = ref => (this.navDrawerRef = ref);
+  setNavDrawerRef(ref) { (this.navDrawerRef = ref) };
 
   render() {
     let fullScreenDisplay;

@@ -22,7 +22,7 @@ import SuperSelectComplexExample from '../super_select/super_select_complex';
 
 import makeId from '../../../../src/components/form/form_row/make_id';
 
-export class Modal extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -33,9 +33,10 @@ export class Modal extends Component {
 
     this.closeModal = this.closeModal.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.onSwitchChange = this.onSwitchChange.bind(this);
   }
 
-  onSwitchChange = () => {
+  onSwitchChange() {
     this.setState({
       isSwitchChecked: !this.state.isSwitchChecked,
     });

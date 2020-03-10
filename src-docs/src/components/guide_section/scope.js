@@ -1,4 +1,9 @@
 import { Fragment, Component, useState } from 'react';
+import makeId from '../../../../src/components/form/form_row/make_id';
+import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
+import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
+import HeaderUserMenu from '../../views/header/header_user_menu';
+
 import {
   EuiCode,
   EuiCodeBlock,
@@ -50,10 +55,50 @@ import {
   EuiModal,
   EuiConfirmModal,
   EuiOverlayMask,
+  EuiModalHeader,
+  EuiRange,
+  EuiModalHeaderTitle,
+  EuiModalFooter,
+  EuiModalBody,
+  EuiImage,
+  EuiPageContentBody,
+  EuiPageContentHeaderSection,
+  EuiPageContentHeader,
+  EuiPageContent,
+  EuiFocusTrap,
+  EuiShowFor,
+  EuiPageHeader,
+  EuiPageHeaderSection,
+  EuiPageBody,
+  EuiNavDrawer,
+  EuiNavDrawerGroup,
+  EuiPage,
 } from '../../../../src/components';
 
 const scope = {
+  EuiNavDrawer,
+  EuiNavDrawerGroup,
+  EuiPage,
+  EuiPageContentBody,
+  HeaderSpacesMenu,
+  HeaderUserMenu,
+  EuiPageContentHeaderSection,
+  EuiPageContentHeader,
+  EuiPageContent,
+  EuiShowFor,
+  EuiFocusTrap,
+  EuiPageHeader,
+  EuiPageHeaderSection,
+  EuiPageBody,
+  EuiImage,
+  SuperSelectComplexExample,
+  EuiRange,
+  EuiModalHeaderTitle,
+  EuiModalFooter,
+  EuiModalBody,
+  EuiModalHeader,
   EuiModal,
+  makeId,
   EuiConfirmModal,
   EuiOverlayMask,
   EuiSwitch,

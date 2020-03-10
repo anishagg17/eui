@@ -8,43 +8,52 @@ import {
   EuiFlexItem,
 } from '../../../../src/components';
 
-export class ConfirmModal extends Component {
-  state = {
-    isModalVisible: false,
-    isDestroyModalVisible: false,
-    isEmptyModalVisible: false,
-    isButtonDisabledModalVisible: false,
-  };
+export default class extends Component {
+  constructor(props) {
+    super(props);
 
-  closeModal = () => {
+    this.state = {
+      isModalVisible: false,
+      isDestroyModalVisible: false,
+      isEmptyModalVisible: false,
+      isButtonDisabledModalVisible: false,
+    };
+    ['showButtonDisabledModal', 'closeButtonDisabledModal',
+      'showEmptyModal', 'closeEmptyModal',
+      'showDestroyModal', 'closeDestroyModal',
+      'showModal', 'closeModal'].forEach(method => {
+        this[method] = this[method].bind(this);
+      });
+  }
+  closeModal() {
     this.setState({ isModalVisible: false });
   };
 
-  showModal = () => {
+  showModal() {
     this.setState({ isModalVisible: true });
   };
 
-  closeDestroyModal = () => {
+  closeDestroyModal() {
     this.setState({ isDestroyModalVisible: false });
   };
 
-  showDestroyModal = () => {
+  showDestroyModal() {
     this.setState({ isDestroyModalVisible: true });
   };
 
-  closeEmptyModal = () => {
+  closeEmptyModal() {
     this.setState({ isEmptyModalVisible: false });
   };
 
-  showEmptyModal = () => {
+  showEmptyModal() {
     this.setState({ isEmptyModalVisible: true });
   };
 
-  closeButtonDisabledModal = () => {
+  closeButtonDisabledModal() {
     this.setState({ isButtonDisabledModalVisible: false });
   };
 
-  showButtonDisabledModal = () => {
+  showButtonDisabledModal() {
     this.setState({ isButtonDisabledModalVisible: true });
   };
 
