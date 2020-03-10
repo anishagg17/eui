@@ -73,9 +73,11 @@ import {
   EuiNavDrawer,
   EuiNavDrawerGroup,
   EuiPage,
+  EuiPageSideBar,
 } from '../../../../src/components';
 
 const scope = {
+  EuiPageSideBar,
   EuiNavDrawer,
   EuiNavDrawerGroup,
   EuiPage,
