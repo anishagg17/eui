@@ -15,21 +15,23 @@ export default class PopoverContainer extends Component {
     this.state = {
       isPopoverOpen: false,
     };
+    this.closePopover = this.closePopover.bind(this)
+    this.onButtonClick = this.onButtonClick.bind(this)
   }
 
-  onButtonClick = () => {
+  onButtonClick() {
     this.setState({
       isPopoverOpen: !this.state.isPopoverOpen,
     });
   };
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isPopoverOpen: false,
     });
   };
 
-  setPanelRef = node => (this.panel = node);
+  setPanelRef = (node) => { this.panel = node };
 
   render() {
     const button = (

@@ -9,15 +9,6 @@ import {
   EuiText,
 } from '../../../../src/components';
 
-const noteHeight = (
-  <EuiText>
-    <p style={{ width: 200 }}>
-      For left- or right-aligned popovers, make sure there is sufficient
-      content. If the popover height is too short, the arrow positioning will
-      appear off.
-    </p>
-  </EuiText>
-);
 
 export default class extends Component {
   constructor(props) {
@@ -29,6 +20,15 @@ export default class extends Component {
       isPopoverOpen3: false,
       isPopoverOpen4: false,
     };
+    this.noteHeight = (
+      <EuiText>
+        <p style={{ width: 200 }}>
+          For left- or right-aligned popovers, make sure there is sufficient
+          content. If the popover height is too short, the arrow positioning will
+          appear off.
+        </p>
+      </EuiText>
+    );
   }
 
   onButtonClick1() {
@@ -309,7 +309,7 @@ export default class extends Component {
               isOpen={this.state.isPopoverOpen7}
               closePopover={this.closePopover7.bind(this)}
               anchorPosition="leftUp">
-              {noteHeight}
+              {this.noteHeight}
             </EuiPopover>
           </EuiFlexItem>
 
@@ -345,7 +345,7 @@ export default class extends Component {
               isOpen={this.state.isPopoverOpen9}
               closePopover={this.closePopover9.bind(this)}
               anchorPosition="leftDown">
-              {noteHeight}
+              {this.noteHeight}
             </EuiPopover>
           </EuiFlexItem>
         </EuiFlexGroup>
@@ -367,7 +367,7 @@ export default class extends Component {
               isOpen={this.state.isPopoverOpen10}
               closePopover={this.closePopover10.bind(this)}
               anchorPosition="rightUp">
-              {noteHeight}
+              {this.noteHeight}
             </EuiPopover>
           </EuiFlexItem>
 
@@ -403,7 +403,7 @@ export default class extends Component {
               isOpen={this.state.isPopoverOpen12}
               closePopover={this.closePopover12.bind(this)}
               anchorPosition="rightDown">
-              {noteHeight}
+              {this.noteHeight}
             </EuiPopover>
           </EuiFlexItem>
         </EuiFlexGroup>

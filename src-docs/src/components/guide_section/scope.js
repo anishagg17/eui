@@ -74,9 +74,15 @@ import {
   EuiNavDrawerGroup,
   EuiPage,
   EuiPageSideBar,
+  EuiPopoverTitle,
+  EuiPopoverFooter,
+  EuiInputPopover,
 } from '../../../../src/components';
 
 const scope = {
+  EuiInputPopover,
+  EuiPopoverTitle,
+  EuiPopoverFooter,
   EuiPageSideBar,
   EuiNavDrawer,
   EuiNavDrawerGroup,

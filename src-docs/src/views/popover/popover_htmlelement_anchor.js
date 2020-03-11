@@ -12,19 +12,21 @@ class PopoverApp extends Component {
     this.state = {
       isPopoverOpen: false,
     };
+    this.onButtonClick = this.onButtonClick.bind(this)
+    this.closePopover = this.closePopover.bind(this)
   }
 
   componentDidMount() {
     this.props.anchor.addEventListener('click', this.onButtonClick);
   }
 
-  onButtonClick = () => {
+  onButtonClick() {
     this.setState({
       isPopoverOpen: !this.state.isPopoverOpen,
     });
   };
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isPopoverOpen: false,
     });
