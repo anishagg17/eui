@@ -77,9 +77,13 @@ import {
   EuiPopoverTitle,
   EuiPopoverFooter,
   EuiInputPopover,
+  EuiBreadcrumbs,
+  EuiButtonGroup,
 } from '../../../../src/components';
 
 const scope = {
+  EuiBreadcrumbs,
+  EuiButtonGroup,
   EuiInputPopover,
   EuiPopoverTitle,
   EuiPopoverFooter,
