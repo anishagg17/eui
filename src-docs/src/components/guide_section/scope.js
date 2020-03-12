@@ -92,9 +92,11 @@ import {
   EuiSelect,
   EuiIconTip,
   EuiFormLabel,
+  EuiAvatar,
 } from '../../../../src/components';
 
 const scope = {
+  EuiAvatar,
   EuiFormLabel,
   EuiIconTip,
   EuiSelect,
