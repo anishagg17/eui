@@ -10,16 +10,17 @@ import {
   EuiSwitch,
 } from '../../../../src/components';
 
-export class FilePicker extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
       files: {},
       large: true,
-    };
+    }; this.onChange = this.onChange.bind(this)
+
   }
 
-  onChange = files => {
+  onChange(files) {
     this.setState({
       files: files,
     });
@@ -39,7 +40,7 @@ export class FilePicker extends Component {
       );
     } else {
       return (
-        <p>Add some files to see a demo of retrieving from the FileList</p>
+        <p>Add some files to see a demo of retrieving  the FileList</p>
       );
     }
   }

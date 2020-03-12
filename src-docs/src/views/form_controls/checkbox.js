@@ -12,15 +12,18 @@ export default class extends Component {
       checked: false,
       indeterminate: true,
     };
+    this.onChange = this.onChange.bind(this)
+    this.onChangeIndeterminate = this.onChangeIndeterminate.bind(this)
+
   }
 
-  onChange = e => {
+  onChange(e) {
     this.setState({
       checked: e.target.checked,
     });
   };
 
-  onChangeIndeterminate = () => {
+  onChangeIndeterminate() {
     this.setState({
       indeterminate: !this.state.indeterminate,
     });

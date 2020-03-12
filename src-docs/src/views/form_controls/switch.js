@@ -9,9 +9,11 @@ export default class extends Component {
     this.state = {
       checked: false,
     };
+    this.onChange = this.onChange.bind(this)
+
   }
 
-  onChange = e => {
+  onChange(e) {
     this.setState({
       checked: e.target.checked,
     });

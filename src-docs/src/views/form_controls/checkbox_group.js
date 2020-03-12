@@ -34,9 +34,11 @@ export default class extends Component {
         [`${idPrefix}1`]: true,
       },
     };
+    this.onChange = this.onChange.bind(this)
+
   }
 
-  onChange = optionId => {
+  onChange(optionId) {
     const newCheckboxIdToSelectedMap = {
       ...this.state.checkboxIdToSelectedMap,
       ...{

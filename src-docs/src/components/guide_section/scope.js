@@ -3,6 +3,7 @@ import makeId from '../../../../src/components/form/form_row/make_id';
 import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
 import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
 import HeaderUserMenu from '../../views/header/header_user_menu';
+import { DisplayToggles } from '../../views/form_controls/display_toggles';
 
 import {
   EuiCode,
@@ -79,11 +80,36 @@ import {
   EuiInputPopover,
   EuiBreadcrumbs,
   EuiButtonGroup,
+  EuiFieldNumber,
+  EuiCheckbox,
+  EuiCheckboxGroup,
+  EuiRadio,
+  EuiRadioGroup,
+  EuiToolTip,
+  EuiFormControlLayout,
+  EuiFormControlLayoutDelimited,
+  EuiFormFieldset,
+  EuiSelect,
+  EuiIconTip,
+  EuiFormLabel,
 } from '../../../../src/components';
 
 const scope = {
+  EuiFormLabel,
+  EuiIconTip,
+  EuiSelect,
+  EuiToolTip,
+  EuiFormControlLayout,
+  EuiFormControlLayoutDelimited,
+  EuiFormFieldset,
+  EuiFieldNumber,
+  EuiCheckbox,
+  EuiCheckboxGroup,
+  EuiRadio,
+  EuiRadioGroup,
   EuiBreadcrumbs,
   EuiButtonGroup,
+  DisplayToggles,
   EuiInputPopover,
   EuiPopoverTitle,
   EuiPopoverFooter,

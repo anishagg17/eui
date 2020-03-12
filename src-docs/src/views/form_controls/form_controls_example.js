@@ -50,7 +50,7 @@ import TextArea from './text_area';
 const textAreaSource = require('!!raw-loader!./text_area');
 const textAreaHtml = renderToHtml(TextArea);
 
-import { FilePicker } from './file_picker';
+import FilePicker from './file_picker';
 const filePickerSource = require('!!raw-loader!./file_picker');
 const filePickerHtml = renderToHtml(FilePicker);
 

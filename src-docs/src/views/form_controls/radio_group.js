@@ -30,9 +30,11 @@ export default class extends Component {
     this.state = {
       radioIdSelected: `${idPrefix}1`,
     };
+    this.onChange = this.onChange.bind(this)
+
   }
 
-  onChange = optionId => {
+  onChange(optionId) {
     this.setState({
       radioIdSelected: optionId,
     });

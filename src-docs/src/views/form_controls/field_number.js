@@ -10,9 +10,11 @@ export default class extends Component {
     this.state = {
       value: '',
     };
+    this.onChange = this.onChange.bind(this)
+
   }
 
-  onChange = e => {
+  onChange(e) {
     const sanitizedValue = parseInt(e.target.value, 10);
     this.setState({
       value: isNaN(sanitizedValue) ? '' : sanitizedValue,

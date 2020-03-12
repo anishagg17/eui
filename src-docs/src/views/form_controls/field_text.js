@@ -10,9 +10,10 @@ export default class extends Component {
     this.state = {
       value: '',
     };
+    this.onChange = this.onChange.bind(this)
   }
 
-  onChange = e => {
+  onChange(e) {
     this.setState({
       value: e.target.value,
     });
