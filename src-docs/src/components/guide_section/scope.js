@@ -3,6 +3,7 @@ import makeId from '../../../../src/components/form/form_row/make_id';
 import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
 import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
 import HeaderUserMenu from '../../views/header/header_user_menu';
+import EuiTabsExample from '../../views/tabs/tabbed_content';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
 
 import {
@@ -93,9 +94,15 @@ import {
   EuiIconTip,
   EuiFormLabel,
   EuiAvatar,
+  EuiContextMenuItem,
+  EuiContextMenuPanel,
+  EuiContextMenu,
 } from '../../../../src/components';
 
 const scope = {
+  EuiContextMenu,
+  EuiContextMenuPanel,
+  EuiContextMenuItem,
   EuiAvatar,
   EuiFormLabel,
   EuiIconTip,
@@ -164,7 +171,8 @@ const scope = {
   EuiForm,
   EuiAccordion,
   EuiButtonToggle,
-  Component, useState,
+  Component,
+  useState,
   EuiCode,
   EuiCodeBlock,
   EuiErrorBoundary,
@@ -190,6 +198,7 @@ const scope = {
   EuiFlexGrid,
   EuiPanel,
   EuiIcon,
+  EuiTabsExample,
 };
 
 export default scope;

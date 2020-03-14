@@ -11,22 +11,19 @@ import {
 
 import EuiTabsExample from '../tabs/tabbed_content';
 
-function flattenPanelTree(tree, array = []) {
-  array.push(tree);
-
-  if (tree.items) {
-    tree.items.forEach(item => {
-      if (item.panel) {
-        flattenPanelTree(item.panel, array);
-        item.panel = item.panel.id;
-      }
-    });
-  }
-
-  return array;
-}
-
 export default class extends Component {
+  flattenPanelTree(tree, array = []) {
+    array.push(tree);
+    if (tree.items) {
+      tree.items.forEach(item => {
+        if (item.panel) {
+          this.flattenPanelTree(item.panel, array);
+          item.panel = item.panel.id;
+        }
+      });
+    }
+    return array;
+  }
   constructor(props) {
     super(props);
 
@@ -35,7 +32,7 @@ export default class extends Component {
     };
 
     this.createPanelTree = Content => {
-      return flattenPanelTree({
+      return this.flattenPanelTree({
         id: 0,
         title: 'View options',
         items: [
@@ -60,6 +57,7 @@ export default class extends Component {
         ],
       });
     };
+    this.flattenPanelTree = this.flattenPanelTree.bind(this);
 
     this.panels = this.createPanelTree(() => (
       <EuiText style={{ padding: 24 }} textAlign="center">
@@ -75,33 +73,36 @@ export default class extends Component {
         </p>
       </EuiText>
     ));
-
+    this.onButtonClick = this.onButtonClick.bind(this);
+    this.onDynamicButtonClick = this.onDynamicButtonClick.bind(this);
+    this.closeDynamicPopover = this.closeDynamicPopover.bind(this);
+    this.closePopover = this.closePopover.bind(this);
     this.dynamicPanels = this.createPanelTree(EuiTabsExample);
   }
 
-  onButtonClick = () => {
+  onButtonClick() {
     this.setState(prevState => ({
       isPopoverOpen: !prevState.isPopoverOpen,
     }));
-  };
+  }
 
-  onDynamicButtonClick = () => {
+  onDynamicButtonClick() {
     this.setState(prevState => ({
       isDynamicPopoverOpen: !prevState.isDynamicPopoverOpen,
     }));
-  };
+  }
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isPopoverOpen: false,
     });
-  };
+  }
 
-  closeDynamicPopover = () => {
+  closeDynamicPopover() {
     this.setState({
       isDynamicPopoverOpen: false,
     });
-  };
+  }
 
   render() {
     const button = (

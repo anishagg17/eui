@@ -10,22 +10,20 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-function flattenPanelTree(tree, array = []) {
-  array.push(tree);
-
-  if (tree.items) {
-    tree.items.forEach(item => {
-      if (item.panel) {
-        flattenPanelTree(item.panel, array);
-        item.panel = item.panel.id;
-      }
-    });
+export default class extends Component {
+  flattenPanelTree(tree, array = []) {
+    array.push(tree);
+    if (tree.items) {
+      tree.items.forEach(item => {
+        if (item.panel) {
+          this.flattenPanelTree(item.panel, array);
+          item.panel = item.panel.id;
+        }
+      });
+    }
+    return array;
   }
 
-  return array;
-}
-
-export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -137,21 +135,23 @@ export default class extends Component {
         },
       ],
     };
-
-    this.panels = flattenPanelTree(panelTree);
+    this.flattenPanelTree = this.flattenPanelTree.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
+    this.closePopover = this.closePopover.bind(this);
+    this.panels = this.flattenPanelTree(panelTree);
   }
 
-  onButtonClick = () => {
+  onButtonClick() {
     this.setState(prevState => ({
       isPopoverOpen: !prevState.isPopoverOpen,
     }));
-  };
+  }
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isPopoverOpen: false,
     });
-  };
+  }
 
   render() {
     const button = (

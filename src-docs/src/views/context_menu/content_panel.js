@@ -15,19 +15,21 @@ export default class extends Component {
     this.state = {
       isPopoverOpen: false,
     };
+    this.onButtonClick = this.onButtonClick.bind(this);
+    this.closePopover = this.closePopover.bind(this);
   }
 
-  onButtonClick = () => {
+  onButtonClick() {
     this.setState(prevState => ({
       isPopoverOpen: !prevState.isPopoverOpen,
     }));
-  };
+  }
 
-  closePopover = () => {
+  closePopover() {
     this.setState({
       isPopoverOpen: false,
     });
-  };
+  }
 
   render() {
     const button = (
