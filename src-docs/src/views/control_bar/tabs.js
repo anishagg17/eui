@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { EuiButton, EuiControlBar, EuiText } from '../../../../src/components';
 
-export class ControlBarWithTabs extends React.Component {
+export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,40 +10,44 @@ export class ControlBarWithTabs extends React.Component {
       isDisplaying: false,
       tabContent: '',
     };
+    this.closeTheHatch = this.closeTheHatch.bind(this);
+    this.tabOne = this.tabOne.bind(this);
+    this.tabTwo = this.tabTwo.bind(this);
+    this.toggleDisplay = this.toggleDisplay.bind(this);
   }
 
-  soundTheAlarms = () => {
+  soundTheAlarms() {
     alert('You clicked a button!');
-  };
+  }
 
-  closeTheHatch = () => {
+  closeTheHatch() {
     this.setState({
       contentIsVisible: false,
     });
-  };
+  }
 
-  tabOne = () => {
+  tabOne() {
     this.setState({
       contentIsVisible: true,
       tabContent:
-        "Oceanic Airlines Flight 815 was a scheduled flight from Sydney, Australia to Los Angeles, California, United States, on a Boeing 777-200ER. On September 22, 2004 at 4:16 P.M., the airliner, carrying 324 passengers, deviated from its original course and disappeared over the Pacific Ocean. This is the central moment in the series that kicked off its plotline, and marked the chronological beginning of the main characters' adventures on the Island.",
+        "Oceanic Airlines Flight 815 was a scheduled flight  Sydney, Australia to Los Angeles, California, United States, on a Boeing 777-200ER. On September 22, 2004 at 4:16 P.M., the airliner, carrying 324 passengers, deviated  its original course and disappeared over the Pacific Ocean. This is the central moment in the series that kicked off its plotline, and marked the chronological beginning of the main characters' adventures on the Island.",
     });
-  };
+  }
 
-  tabTwo = () => {
+  tabTwo() {
     this.setState({
       contentIsVisible: true,
       tabContent:
-        'The Others, referred to by the DHARMA Initiative as the Hostiles or the Natives, and also by the tail section survivors of Oceanic Flight 815 as Them, are a group of people living on the Island who were followers of Jacob, intermediated by Richard Alpert. Jacob never showed himself to his people, and they took orders from a succession of leaders including Eloise Hawking, Charles Widmore, Benjamin Linus, and briefly, John Locke.',
+        'The Others, referred to by the DHARMA Initiative as the Hostiles or the Natives, and also by the tail section survivors of Oceanic Flight 815 as Them, are a group of people living on the Island who were followers of Jacob, intermediated by Richard Alpert. Jacob never showed himself to his people, and they took orders  a succession of leaders including Eloise Hawking, Charles Widmore, Benjamin Linus, and briefly, John Locke.',
     });
-  };
+  }
 
-  toggleDisplay = () => {
+  toggleDisplay() {
     this.setState(prevState => ({
       isDisplaying: !prevState.isDisplaying,
       contentIsVisible: false,
     }));
-  };
+  }
 
   render() {
     const controls = [

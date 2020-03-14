@@ -15,22 +15,25 @@ export default class extends Component {
       contentIsVisible: false,
       isDisplaying: false,
     };
+    ['toggleContent', 'toggleDisplay', 'onKeyDown'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  toggleContent = () => {
+  toggleContent() {
     this.setState(prevState => ({
       contentIsVisible: !prevState.contentIsVisible,
     }));
-  };
+  }
 
-  toggleDisplay = () => {
+  toggleDisplay() {
     this.setState(prevState => ({
       isDisplaying: !prevState.isDisplaying,
       contentIsVisible: false,
     }));
-  };
+  }
 
-  onKeyDown = event => {
+  onKeyDown(event) {
     if (event.keyCode === keyCodes.ESCAPE) {
       event.preventDefault();
       event.stopPropagation();
@@ -39,7 +42,7 @@ export default class extends Component {
         contentIsVisible: false,
       });
     }
-  };
+  }
 
   render() {
     const codeControls = [

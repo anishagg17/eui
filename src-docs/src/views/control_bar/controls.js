@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { EuiControlBar, EuiLink } from '../../../../src/components';
-export class Controls extends React.Component {
+
+export default class extends Component {
   constructor(props) {
     super(props);
   }
 
-  soundTheAlarms = () => {
+  soundTheAlarms() {
     alert('You clicked a button!');
-  };
+  }
 
   render() {
     const controls = [

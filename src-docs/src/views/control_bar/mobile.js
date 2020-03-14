@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { EuiButton, EuiControlBar } from '../../../../src/components';
 
-export class ControlBarMobile extends React.Component {
+export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isDisplaying: false,
       tabContent: '',
     };
+    this.toggleDisplay = this.toggleDisplay.bind(this);
   }
 
-  toggleDisplay = () => {
+  toggleDisplay() {
     this.setState(prevState => ({
       isDisplaying: !prevState.isDisplaying,
     }));
-  };
+  }
 
   render() {
     const controls = [

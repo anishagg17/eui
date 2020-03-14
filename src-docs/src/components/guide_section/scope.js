@@ -97,9 +97,11 @@ import {
   EuiContextMenuItem,
   EuiContextMenuPanel,
   EuiContextMenu,
+  EuiControlBar,
 } from '../../../../src/components';
 
 const scope = {
+  EuiControlBar,
   EuiContextMenu,
   EuiContextMenuPanel,
   EuiContextMenuItem,
