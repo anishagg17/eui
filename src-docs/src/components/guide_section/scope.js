@@ -5,6 +5,7 @@ import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
 import HeaderUserMenu from '../../views/header/header_user_menu';
 import EuiTabsExample from '../../views/tabs/tabbed_content';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
+import { VISUALIZATION_COLORS } from '../../../../src/services';
 
 import {
   EuiCode,
@@ -98,9 +99,14 @@ import {
   EuiContextMenuPanel,
   EuiContextMenu,
   EuiControlBar,
+  EuiFacetButton,
+  EuiFacetGroup,
 } from '../../../../src/components';
 
 const scope = {
+  EuiFacetGroup,
+  VISUALIZATION_COLORS,
+  EuiFacetButton,
   EuiControlBar,
   EuiContextMenu,
   EuiContextMenuPanel,

@@ -67,9 +67,19 @@ export default class extends Component {
         iconColor: VISUALIZATION_COLORS[5],
       },
     ];
+    [
+      'facet0Clicked',
+      'facet1Clicked',
+      'facet2Clicked',
+      'facet3Clicked',
+      'facet4Clicked',
+      'facets',
+    ].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  facet0Clicked = id => {
+  facet0Clicked(id) {
     this.setState(prevState => {
       return {
         icon: false,
@@ -79,9 +89,9 @@ export default class extends Component {
         selectedOptionId: prevState.selectedOptionId === id ? undefined : id,
       };
     });
-  };
+  }
 
-  facet1Clicked = id => {
+  facet1Clicked(id) {
     this.setState(prevState => {
       return {
         icon: true,
@@ -91,18 +101,18 @@ export default class extends Component {
         selectedOptionId: prevState.selectedOptionId === id ? undefined : id,
       };
     });
-  };
+  }
 
-  facet2Clicked = id => {
+  facet2Clicked(id) {
     this.setState(prevState => {
       return {
         disabled: prevState.selectedOptionId === id ? false : true,
         selectedOptionId: prevState.selectedOptionId === id ? undefined : id,
       };
     });
-  };
+  }
 
-  facet3Clicked = id => {
+  facet3Clicked(id) {
     this.setState(prevState => {
       return {
         icon: false,
@@ -112,9 +122,9 @@ export default class extends Component {
         selectedOptionId: prevState.selectedOptionId === id ? undefined : id,
       };
     });
-  };
+  }
 
-  facet4Clicked = id => {
+  facet4Clicked(id) {
     this.setState(prevState => ({
       loading: true,
       selectedOptionId: prevState.selectedOptionId === id ? undefined : id,
@@ -128,9 +138,9 @@ export default class extends Component {
         loading: false,
       });
     }, 1200);
-  };
+  }
 
-  facets = align => {
+  facets(align) {
     const { selectedOptionId, icon, disabled, avatars, loading } = this.state;
 
     return (
@@ -161,7 +171,7 @@ export default class extends Component {
         })}
       </>
     );
-  };
+  }
 
   render() {
     return (
