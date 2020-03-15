@@ -101,10 +101,14 @@ import {
   EuiControlBar,
   EuiFacetButton,
   EuiFacetGroup,
+  EuiKeyPadMenu,
+  EuiKeyPadMenuItem,
 } from '../../../../src/components';
 
 const scope = {
   EuiFacetGroup,
+  EuiKeyPadMenu,
+  EuiKeyPadMenuItem,
   VISUALIZATION_COLORS,
   EuiFacetButton,
   EuiControlBar,

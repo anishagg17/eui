@@ -7,7 +7,7 @@ import { GuideSectionTypes } from '../../components';
 import { EuiCode, EuiLink } from '../../../../src/components';
 
 import Link from './link';
-import { LinkDisable } from './link_disable';
+import LinkDisable from './link_disable';
 
 const linkSource = require('!!raw-loader!./link');
 const linkHtml = renderToHtml(Link);

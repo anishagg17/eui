@@ -6,17 +6,18 @@ import {
   EuiTextColor,
 } from '../../../../src/components';
 
-export class LinkDisable extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {
       disableLink: true,
     };
+    this.toggleLinkDisable = this.toggleLinkDisable.bind(this);
   }
 
-  toggleLinkDisable = () => {
+  toggleLinkDisable() {
     this.setState(prevState => ({ disableLink: !prevState.disableLink }));
-  };
+  }
 
   render() {
     return (
