@@ -20,6 +20,7 @@ export default class extends Component {
     };
 
     this.PAGE_COUNT = 10;
+    this.goToPage = this.goToPage.bind(this);
   }
 
   onButtonClick() {
@@ -34,11 +35,11 @@ export default class extends Component {
     });
   }
 
-  goToPage = pageNumber => {
+  goToPage(pageNumber) {
     this.setState({
       activePage: pageNumber,
     });
-  };
+  }
 
   render() {
     const button = (

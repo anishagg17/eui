@@ -103,9 +103,15 @@ import {
   EuiFacetGroup,
   EuiKeyPadMenu,
   EuiKeyPadMenuItem,
+  EuiPagination,
+  EuiTreeView,
+  EuiToken,
 } from '../../../../src/components';
 
 const scope = {
+  EuiToken,
+  EuiTreeView,
+  EuiPagination,
   EuiFacetGroup,
   EuiKeyPadMenu,
   EuiKeyPadMenuItem,

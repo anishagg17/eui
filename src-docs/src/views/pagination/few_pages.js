@@ -11,13 +11,14 @@ export default class extends Component {
     };
 
     this.PAGE_COUNT = 4;
+    this.goToPage = this.goToPage.bind(this);
   }
 
-  goToPage = pageNumber => {
+  goToPage(pageNumber) {
     this.setState({
       activePage: pageNumber,
     });
-  };
+  }
 
   render() {
     return (
