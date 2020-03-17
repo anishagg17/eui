@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 
 import { EuiTreeView, EuiToken } from '../../../../src/components';
 
-export class TreeViewCompressed extends React.Component {
-  showAlert = () => {
+export default class extends Component {
+  showAlert() {
     alert('You squashed a bug!');
-  };
+  }
 
   render() {
     const items = [
