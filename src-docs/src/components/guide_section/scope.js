@@ -107,9 +107,15 @@ import {
   EuiTreeView,
   EuiToken,
   EuiSideNav,
+  EuiSteps,
+  EuiSubSteps,
+  EuiStepsHorizontal,
 } from '../../../../src/components';
 
 const scope = {
+  EuiStepsHorizontal,
+  EuiSubSteps,
+  EuiSteps,
   EuiSideNav,
   EuiToken,
   EuiTreeView,
