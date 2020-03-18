@@ -106,9 +106,11 @@ import {
   EuiPagination,
   EuiTreeView,
   EuiToken,
+  EuiSideNav,
 } from '../../../../src/components';
 
 const scope = {
+  EuiSideNav,
   EuiToken,
   EuiTreeView,
   EuiPagination,

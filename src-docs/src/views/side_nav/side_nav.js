@@ -9,13 +9,14 @@ export default class extends Component {
     this.state = {
       isSideNavOpenOnMobile: false,
     };
+    this.toggleOpenOnMobile = this.toggleOpenOnMobile.bind(this);
   }
 
-  toggleOpenOnMobile = () => {
+  toggleOpenOnMobile() {
     this.setState({
       isSideNavOpenOnMobile: !this.state.isSideNavOpenOnMobile,
     });
-  };
+  }
 
   render() {
     const sideNav = [

@@ -10,21 +10,24 @@ export default class extends Component {
       isSideNavOpenOnMobile: false,
       selectedItemName: 'Lion stuff',
     };
+    ['selectItem', 'createItem', 'toggleOpenOnMobile'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  toggleOpenOnMobile = () => {
+  toggleOpenOnMobile() {
     this.setState({
       isSideNavOpenOnMobile: !this.state.isSideNavOpenOnMobile,
     });
-  };
+  }
 
-  selectItem = name => {
+  selectItem(name) {
     this.setState({
       selectedItemName: name,
     });
-  };
+  }
 
-  createItem = (name, data = {}) => {
+  createItem(name, data = {}) {
     // NOTE: Duplicate `name` values will cause `id` collisions.
     return {
       ...data,
@@ -33,7 +36,7 @@ export default class extends Component {
       isSelected: this.state.selectedItemName === name,
       onClick: () => this.selectItem(name),
     };
-  };
+  }
 
   render() {
     const sideNav = [
