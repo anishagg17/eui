@@ -1,4 +1,11 @@
-import { Fragment, Component, useState } from 'react';
+import {
+  Fragment,
+  Component,
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+} from 'react';
 import makeId from '../../../../src/components/form/form_row/make_id';
 import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
 import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
@@ -6,7 +13,7 @@ import HeaderUserMenu from '../../views/header/header_user_menu';
 import EuiTabsExample from '../../views/tabs/tabbed_content';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
 import { VISUALIZATION_COLORS } from '../../../../src/services';
-
+import { fake } from 'faker';
 import {
   EuiCode,
   EuiCodeBlock,
@@ -111,9 +118,11 @@ import {
   EuiSubSteps,
   EuiStepsHorizontal,
   EuiTabbedContent,
+  EuiDataGrid,
 } from '../../../../src/components';
 
 const scope = {
+  EuiDataGrid,
   EuiTabbedContent,
   EuiStepsHorizontal,
   EuiSubSteps,
@@ -227,6 +236,10 @@ const scope = {
   EuiPanel,
   EuiIcon,
   EuiTabsExample,
+  fake,
+  useMemo,
+  useCallback,
+  useEffect,
 };
 
 export default scope;

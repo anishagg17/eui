@@ -18,141 +18,141 @@ import {
   EuiSpacer,
 } from '../../../../src/components/';
 
-const columns = [
-  {
-    id: 'name',
-    defaultSortDirection: 'asc',
-  },
-  {
-    id: 'email',
-    display: (
-      // This is an example of an icon next to a title that still respects text truncate
-      <EuiFlexGroup gutterSize="xs" responsive={false}>
-        <EuiFlexItem className="eui-textTruncate">
-          <div className="eui-textTruncate">email</div>
-        </EuiFlexItem>
-        <EuiFlexItem grow={false}>
-          <EuiButtonIcon
-            aria-label="Column header email"
-            iconType="gear"
-            color="text"
-            onClick={() => alert('Email Icon Clicked!')}
-          />
-        </EuiFlexItem>
-      </EuiFlexGroup>
-    ),
-  },
-  {
-    id: 'location',
-  },
-  {
-    id: 'account',
-  },
-  {
-    id: 'date',
-    defaultSortDirection: 'desc',
-  },
-  {
-    id: 'amount',
-  },
-  {
-    id: 'phone',
-    isSortable: false,
-  },
-  {
-    id: 'version',
-    defaultSortDirection: 'desc',
-    initialWidth: 65,
-    isResizable: false,
-  },
-];
-
-const raw_data = [];
-
-for (let i = 1; i < 100; i++) {
-  raw_data.push({
-    name: fake('{{name.lastName}}, {{name.firstName}} {{name.suffix}}'),
-    email: <EuiLink href="">{fake('{{internet.email}}')}</EuiLink>,
-    location: (
-      <Fragment>
-        {`${fake('{{address.city}}')}, `}
-        <EuiLink href="https://google.com">
-          {fake('{{address.country}}')}
-        </EuiLink>
-      </Fragment>
-    ),
-    date: fake('{{date.past}}'),
-    account: fake('{{finance.account}}'),
-    amount: fake('${{commerce.price}}'),
-    phone: fake('{{phone.phoneNumber}}'),
-    version: fake('{{system.semver}}'),
-  });
-}
-
-const trailingControlColumns = [
-  {
-    id: 'actions',
-    width: 40,
-    headerCellRender: () => null,
-    rowCellRender: function RowCellRender() {
-      const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-      return (
-        <div>
-          <EuiPopover
-            isOpen={isPopoverOpen}
-            anchorPosition="upCenter"
-            button={
-              <EuiButtonIcon
-                aria-label="show actions"
-                iconType="boxesHorizontal"
-                color="text"
-                onClick={() => setIsPopoverOpen(!isPopoverOpen)}
-              />
-            }
-            closePopover={() => setIsPopoverOpen(false)}
-            ownFocus={true}>
-            <EuiPopoverTitle>Actions</EuiPopoverTitle>
-            <div style={{ width: 150 }}>
-              <button onClick={() => alert('hello')} component="span">
-                <EuiFlexGroup
-                  alignItems="center"
-                  component="span"
-                  gutterSize="s">
-                  <EuiFlexItem grow={false}>
-                    <EuiButtonIcon
-                      aria-label="Pin selected items"
-                      iconType="pin"
-                      color="text"
-                    />
-                  </EuiFlexItem>
-                  <EuiFlexItem>Pin</EuiFlexItem>
-                </EuiFlexGroup>
-              </button>
-              <EuiSpacer size="s" />
-              <button onClick={() => alert('hello')}>
-                <EuiFlexGroup
-                  alignItems="center"
-                  component="span"
-                  gutterSize="s">
-                  <EuiFlexItem grow={false}>
-                    <EuiButtonIcon
-                      aria-label="Delete selected items"
-                      iconType="trash"
-                      color="text"
-                    />
-                  </EuiFlexItem>
-                  <EuiFlexItem>Delete</EuiFlexItem>
-                </EuiFlexGroup>
-              </button>
-            </div>
-          </EuiPopover>
-        </div>
-      );
-    },
-  },
-];
-
 export default () => {
+  const columns = [
+    {
+      id: 'name',
+      defaultSortDirection: 'asc',
+    },
+    {
+      id: 'email',
+      display: (
+        // This is an example of an icon next to a title that still respects text truncate
+        <EuiFlexGroup gutterSize="xs" responsive={false}>
+          <EuiFlexItem className="eui-textTruncate">
+            <div className="eui-textTruncate">email</div>
+          </EuiFlexItem>
+          <EuiFlexItem grow={false}>
+            <EuiButtonIcon
+              aria-label="Column header email"
+              iconType="gear"
+              color="text"
+              onClick={() => alert('Email Icon Clicked!')}
+            />
+          </EuiFlexItem>
+        </EuiFlexGroup>
+      ),
+    },
+    {
+      id: 'location',
+    },
+    {
+      id: 'account',
+    },
+    {
+      id: 'date',
+      defaultSortDirection: 'desc',
+    },
+    {
+      id: 'amount',
+    },
+    {
+      id: 'phone',
+      isSortable: false,
+    },
+    {
+      id: 'version',
+      defaultSortDirection: 'desc',
+      initialWidth: 65,
+      isResizable: false,
+    },
+  ];
+
+  const raw_data = [];
+
+  for (let i = 1; i < 100; i++) {
+    raw_data.push({
+      name: fake('{{name.lastName}}, {{name.firstName}} {{name.suffix}}'),
+      email: <EuiLink href="">{fake('{{internet.email}}')}</EuiLink>,
+      location: (
+        <Fragment>
+          {`${fake('{{address.city}}')}, `}
+          <EuiLink href="https://google.com">
+            {fake('{{address.country}}')}
+          </EuiLink>
+        </Fragment>
+      ),
+      date: fake('{{date.past}}'),
+      account: fake('{{finance.account}}'),
+      amount: fake('${{commerce.price}}'),
+      phone: fake('{{phone.phoneNumber}}'),
+      version: fake('{{system.semver}}'),
+    });
+  }
+
+  const trailingControlColumns = [
+    {
+      id: 'actions',
+      width: 40,
+      headerCellRender: () => null,
+      rowCellRender: function RowCellRender() {
+        const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+        return (
+          <div>
+            <EuiPopover
+              isOpen={isPopoverOpen}
+              anchorPosition="upCenter"
+              button={
+                <EuiButtonIcon
+                  aria-label="show actions"
+                  iconType="boxesHorizontal"
+                  color="text"
+                  onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+                />
+              }
+              closePopover={() => setIsPopoverOpen(false)}
+              ownFocus={true}>
+              <EuiPopoverTitle>Actions</EuiPopoverTitle>
+              <div style={{ width: 150 }}>
+                <button onClick={() => alert('hello')} component="span">
+                  <EuiFlexGroup
+                    alignItems="center"
+                    component="span"
+                    gutterSize="s">
+                    <EuiFlexItem grow={false}>
+                      <EuiButtonIcon
+                        aria-label="Pin selected items"
+                        iconType="pin"
+                        color="text"
+                      />
+                    </EuiFlexItem>
+                    <EuiFlexItem>Pin</EuiFlexItem>
+                  </EuiFlexGroup>
+                </button>
+                <EuiSpacer size="s" />
+                <button onClick={() => alert('hello')}>
+                  <EuiFlexGroup
+                    alignItems="center"
+                    component="span"
+                    gutterSize="s">
+                    <EuiFlexItem grow={false}>
+                      <EuiButtonIcon
+                        aria-label="Delete selected items"
+                        iconType="trash"
+                        color="text"
+                      />
+                    </EuiFlexItem>
+                    <EuiFlexItem>Delete</EuiFlexItem>
+                  </EuiFlexGroup>
+                </button>
+              </div>
+            </EuiPopover>
+          </div>
+        );
+      },
+    },
+  ];
+
   // ** Pagination config
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
   const onChangeItemsPerPage = useCallback(
