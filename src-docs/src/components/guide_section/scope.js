@@ -110,9 +110,11 @@ import {
   EuiSteps,
   EuiSubSteps,
   EuiStepsHorizontal,
+  EuiTabbedContent,
 } from '../../../../src/components';
 
 const scope = {
+  EuiTabbedContent,
   EuiStepsHorizontal,
   EuiSubSteps,
   EuiSteps,

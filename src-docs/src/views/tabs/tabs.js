@@ -7,7 +7,7 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-class EuiTabsExample extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -48,13 +48,14 @@ class EuiTabsExample extends Component {
     this.state = {
       selectedTabId: 'cobalt',
     };
+    this.onSelectedTabChanged = this.onSelectedTabChanged.bind(this);
   }
 
-  onSelectedTabChanged = id => {
+  onSelectedTabChanged(id) {
     this.setState({
       selectedTabId: id,
     });
-  };
+  }
 
   renderTabs() {
     return this.tabs.map((tab, index) => (
@@ -81,5 +82,3 @@ class EuiTabsExample extends Component {
     );
   }
 }
-
-export default EuiTabsExample;

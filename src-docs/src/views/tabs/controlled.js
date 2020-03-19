@@ -9,7 +9,7 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-class EuiTabsExample extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -95,20 +95,22 @@ class EuiTabsExample extends Component {
     this.state = {
       selectedTab: this.tabs[1],
     };
+    this.onTabClick = this.onTabClick.bind(this);
+    this.cycleTab = this.cycleTab.bind(this);
   }
 
-  onTabClick = selectedTab => {
+  onTabClick(selectedTab) {
     this.setState({ selectedTab });
-  };
+  }
 
-  cycleTab = () => {
+  cycleTab() {
     const selectedTabIndex = this.tabs.indexOf(this.state.selectedTab);
     const nextTabIndex =
       selectedTabIndex < this.tabs.length - 1 ? selectedTabIndex + 1 : 0;
     this.setState({
       selectedTab: this.tabs[nextTabIndex],
     });
-  };
+  }
 
   render() {
     return (
@@ -131,5 +133,3 @@ class EuiTabsExample extends Component {
     );
   }
 }
-
-export default EuiTabsExample;
