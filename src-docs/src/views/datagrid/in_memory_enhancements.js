@@ -3,56 +3,56 @@ import { fake } from 'faker';
 
 import { EuiDataGrid, EuiLink } from '../../../../src/components/';
 
-const columns = [
-  {
-    id: 'name',
-  },
-  {
-    id: 'email',
-  },
-  {
-    id: 'location',
-  },
-  {
-    id: 'account',
-  },
-  {
-    id: 'date',
-  },
-  {
-    id: 'amount',
-  },
-  {
-    id: 'phone',
-  },
-  {
-    id: 'version',
-  },
-];
-
-const raw_data = [];
-
-for (let i = 1; i < 100; i++) {
-  raw_data.push({
-    name: fake('{{name.lastName}}, {{name.firstName}} {{name.suffix}}'),
-    email: <EuiLink href="">{fake('{{internet.email}}')}</EuiLink>,
-    location: (
-      <Fragment>
-        {`${fake('{{address.city}}')}, `}
-        <EuiLink href="https://google.com">
-          {fake('{{address.country}}')}
-        </EuiLink>
-      </Fragment>
-    ),
-    date: fake('{{date.past}}'),
-    account: fake('{{finance.account}}'),
-    amount: fake('${{commerce.price}}'),
-    phone: fake('{{phone.phoneNumber}}'),
-    version: fake('{{system.semver}}'),
-  });
-}
-
 export default () => {
+  const columns = [
+    {
+      id: 'name',
+    },
+    {
+      id: 'email',
+    },
+    {
+      id: 'location',
+    },
+    {
+      id: 'account',
+    },
+    {
+      id: 'date',
+    },
+    {
+      id: 'amount',
+    },
+    {
+      id: 'phone',
+    },
+    {
+      id: 'version',
+    },
+  ];
+
+  const raw_data = [];
+
+  for (let i = 1; i < 100; i++) {
+    raw_data.push({
+      name: fake('{{name.lastName}}, {{name.firstName}} {{name.suffix}}'),
+      email: <EuiLink href="">{fake('{{internet.email}}')}</EuiLink>,
+      location: (
+        <Fragment>
+          {`${fake('{{address.city}}')}, `}
+          <EuiLink href="https://google.com">
+            {fake('{{address.country}}')}
+          </EuiLink>
+        </Fragment>
+      ),
+      date: fake('{{date.past}}'),
+      account: fake('{{finance.account}}'),
+      amount: fake('${{commerce.price}}'),
+      phone: fake('{{phone.phoneNumber}}'),
+      version: fake('{{system.semver}}'),
+    });
+  }
+
   // ** Pagination config
   const [pagination, setPagination] = useState({ pageIndex: 0, pageSize: 10 });
   const onChangeItemsPerPage = useCallback(

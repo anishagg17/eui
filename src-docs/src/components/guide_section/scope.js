@@ -5,6 +5,9 @@ import {
   useMemo,
   useCallback,
   useEffect,
+  createContext,
+  useReducer,
+  useContext,
 } from 'react';
 import makeId from '../../../../src/components/form/form_row/make_id';
 import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
@@ -240,6 +243,9 @@ const scope = {
   useMemo,
   useCallback,
   useEffect,
+  createContext,
+  useReducer,
+  useContext,
 };
 
 export default scope;
