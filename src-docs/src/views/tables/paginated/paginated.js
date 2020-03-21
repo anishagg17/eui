@@ -35,9 +35,7 @@ Example country object:
 }
 */
 
-const store = createDataStore();
-
-export class Table extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -46,30 +44,34 @@ export class Table extends Component {
       pageSize: 5,
       showPerPageOptions: true,
     };
+    this.store = createDataStore();
+    this.onTableChange = this.onTableChange.bind(this);
+    this.renderStatus = this.renderStatus.bind(this);
+    this.togglePerPageOptions = this.togglePerPageOptions.bind(this);
   }
 
-  onTableChange = ({ page = {} }) => {
+  onTableChange({ page = {} }) {
     const { index: pageIndex, size: pageSize } = page;
 
     this.setState({
       pageIndex,
       pageSize,
     });
-  };
+  }
 
-  renderStatus = online => {
+  renderStatus(online) {
     const color = online ? 'success' : 'danger';
     const label = online ? 'Online' : 'Offline';
     return <EuiHealth color={color}>{label}</EuiHealth>;
-  };
+  }
 
-  togglePerPageOptions = () =>
+  togglePerPageOptions() {
     this.setState(state => ({ showPerPageOptions: !state.showPerPageOptions }));
-
+  }
   render() {
     const { pageIndex, pageSize, showPerPageOptions } = this.state;
 
-    const { pageOfItems, totalItemCount } = store.findUsers(
+    const { pageOfItems, totalItemCount } = this.store.findUsers(
       pageIndex,
       pageSize
     );
@@ -131,7 +133,7 @@ export class Table extends Component {
         field: 'nationality',
         name: 'Nationality',
         render: countryCode => {
-          const country = store.getCountry(countryCode);
+          const country = this.store.getCountry(countryCode);
           return `${country.flag} ${country.name}`;
         },
       },

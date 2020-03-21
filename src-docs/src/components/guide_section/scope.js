@@ -14,8 +14,9 @@ import SuperSelectComplexExample from '../../views/super_select/super_select_com
 import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
 import HeaderUserMenu from '../../views/header/header_user_menu';
 import EuiTabsExample from '../../views/tabs/tabbed_content';
+import { createDataStore } from '../../views/tables/data_store';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
-import { VISUALIZATION_COLORS } from '../../../../src/services';
+import { VISUALIZATION_COLORS, formatDate } from '../../../../src/services';
 import { fake } from 'faker';
 import {
   EuiCode,
@@ -122,9 +123,13 @@ import {
   EuiStepsHorizontal,
   EuiTabbedContent,
   EuiDataGrid,
+  EuiBasicTable,
+  EuiHealth,
 } from '../../../../src/components';
 
 const scope = {
+  EuiHealth,
+  EuiBasicTable,
   EuiDataGrid,
   EuiTabbedContent,
   EuiStepsHorizontal,
@@ -246,6 +251,8 @@ const scope = {
   createContext,
   useReducer,
   useContext,
+  createDataStore,
+  formatDate,
 };
 
 export default scope;

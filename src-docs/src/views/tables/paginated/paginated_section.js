@@ -3,7 +3,7 @@ import { EuiBasicTable, EuiCode } from '../../../../../src/components';
 import { GuideSectionTypes } from '../../../components';
 import { renderToHtml } from '../../../services';
 
-import { Table } from './paginated';
+import Table from './paginated';
 const source = require('!!raw-loader!./paginated');
 const html = renderToHtml(Table);
 

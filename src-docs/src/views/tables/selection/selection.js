@@ -33,9 +33,7 @@ Example country object:
 }
 */
 
-const store = createDataStore();
-
-export class Table extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -46,11 +44,15 @@ export class Table extends Component {
       sortDirection: 'asc',
       selectedItems: [],
     };
+    this.store = createDataStore();
+    this.onTableChange = this.onTableChange.bind(this);
+    this.onClickDelete = this.onClickDelete.bind(this);
+    this.onSelectionChange = this.onSelectionChange.bind(this);
 
     this.renderStatus = this.renderStatus.bind(this);
   }
 
-  onTableChange = ({ page = {}, sort = {} }) => {
+  onTableChange({ page = {}, sort = {} }) {
     const { index: pageIndex, size: pageSize } = page;
 
     const { field: sortField, direction: sortDirection } = sort;
@@ -61,24 +63,23 @@ export class Table extends Component {
       sortField,
       sortDirection,
     });
-  };
+  }
 
-  onSelectionChange = selectedItems => {
+  onSelectionChange(selectedItems) {
     this.setState({ selectedItems });
-  };
+  }
 
-  onClickDelete = () => {
+  onClickDelete() {
     const { selectedItems } = this.state;
-    store.deleteUsers(...selectedItems.map(user => user.id));
+    this.store.deleteUsers(...selectedItems.map(user => user.id));
 
     this.setState({
       selectedItems: [],
     });
-  };
+  }
 
   renderDeleteButton() {
     const { selectedItems } = this.state;
-
     if (selectedItems.length === 0) {
       return;
     }
@@ -99,7 +100,7 @@ export class Table extends Component {
   render() {
     const { pageIndex, pageSize, sortField, sortDirection } = this.state;
 
-    const { pageOfItems, totalItemCount } = store.findUsers(
+    const { pageOfItems, totalItemCount } = this.store.findUsers(
       pageIndex,
       pageSize,
       sortField,
@@ -166,7 +167,7 @@ export class Table extends Component {
         field: 'nationality',
         name: 'Nationality',
         render: countryCode => {
-          const country = store.getCountry(countryCode);
+          const country = this.store.getCountry(countryCode);
           return `${country.flag} ${country.name}`;
         },
       },

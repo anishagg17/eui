@@ -2,7 +2,7 @@ import React from 'react';
 import { GuideSectionTypes } from '../../../components';
 import { renderToHtml } from '../../../services';
 
-import { Table } from './mobile';
+import Table from './mobile';
 import { propsInfo } from './props_info';
 import { EuiTextColor } from '../../../../../src/components/text';
 import { EuiCode, EuiCodeBlock } from '../../../../../src/components/code';

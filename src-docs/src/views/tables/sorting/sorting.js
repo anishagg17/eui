@@ -32,9 +32,7 @@ Example country object:
 }
 */
 
-const store = createDataStore();
-
-export class Table extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -44,9 +42,11 @@ export class Table extends Component {
       sortField: 'firstName',
       sortDirection: 'asc',
     };
+    this.store = createDataStore();
+    this.onTableChange = this.onTableChange.bind(this);
   }
 
-  onTableChange = ({ page = {}, sort = {} }) => {
+  onTableChange({ page = {}, sort = {} }) {
     const { index: pageIndex, size: pageSize } = page;
 
     const { field: sortField, direction: sortDirection } = sort;
@@ -57,12 +57,12 @@ export class Table extends Component {
       sortField,
       sortDirection,
     });
-  };
+  }
 
   render() {
     const { pageIndex, pageSize, sortField, sortDirection } = this.state;
 
-    const { pageOfItems, totalItemCount } = store.findUsers(
+    const { pageOfItems, totalItemCount } = this.store.findUsers(
       pageIndex,
       pageSize,
       sortField,
@@ -154,7 +154,7 @@ export class Table extends Component {
         ),
         sortable: true,
         render: countryCode => {
-          const country = store.getCountry(countryCode);
+          const country = this.store.getCountry(countryCode);
           return `${country.flag} ${country.name}`;
         },
       },

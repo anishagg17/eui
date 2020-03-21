@@ -9,7 +9,7 @@ import {
 } from '../../../../../src/components';
 
 /*
-Example user object:
+Example user object:s
 
 {
   id: '1',
@@ -30,9 +30,8 @@ Example country object:
 }
 */
 
-const store = createDataStore();
-
-export const Table = () => {
+export default () => {
+  const store = createDataStore();
   const columns = [
     {
       field: 'firstName',

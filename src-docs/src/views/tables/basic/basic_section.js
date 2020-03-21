@@ -4,7 +4,7 @@ import { renderToHtml } from '../../../services';
 import { EuiCode } from '../../../../../src/components';
 import { propsInfo } from './props_info';
 
-import { Table } from './basic';
+import Table from './basic';
 
 const source = require('!!raw-loader!./basic');
 const html = renderToHtml(Table);
