@@ -16,24 +16,26 @@ export default class extends Component {
       card1Selected: true,
       card2Selected: false,
     };
+    this.card2Clicked = this.card2Clicked.bind(this);
+    this.card1Clicked = this.card1Clicked.bind(this);
   }
 
-  card1Clicked = () => {
+  card1Clicked() {
     this.setState({
       card1Selected: !this.state.card1Selected,
     });
-  };
+  }
 
-  card2Clicked = () => {
+  card2Clicked() {
     this.setState({
       card2Selected: !this.state.card2Selected,
     });
-  };
+  }
 
-  detailsClicked = e => {
+  detailsClicked(e) {
     e.stopPropagation();
     console.log('Details clicked');
-  };
+  }
 
   render() {
     return (

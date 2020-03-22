@@ -11,23 +11,23 @@ import {
   EuiCode,
 } from '../../../../src/components';
 
-const radios = [
-  {
-    id: 'radios0',
-    label: 'Option one',
-  },
-  {
-    id: 'radios1',
-    label: 'Option two',
-  },
-  {
-    id: 'radios2',
-    label: 'Option three',
-    disabled: true,
-  },
-];
-
 export default () => {
+  const radios = [
+    {
+      id: 'radios0',
+      label: 'Option one',
+    },
+    {
+      id: 'radios1',
+      label: 'Option two',
+    },
+    {
+      id: 'radios2',
+      label: 'Option three',
+      disabled: true,
+    },
+  ];
+
   return (
     <EuiFlexGroup gutterSize="l">
       <EuiFlexItem>

@@ -11,12 +11,15 @@ import {
 import makeId from '../../../../src/components/form/form_row/make_id';
 
 export default class extends Component {
-  state = {
-    radioName: makeId(),
-    radio: 'radio2',
-    nestedRadio: 'nestedRadio1',
-    checkbox: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      radioName: makeId(),
+      radio: 'radio2',
+      nestedRadio: 'nestedRadio1',
+      checkbox: false,
+    };
+  }
 
   render() {
     const { radioName } = this.state;

@@ -130,10 +130,14 @@ import {
   EuiBetaBadge,
   EuiBadgeGroup,
   EuiNotificationBadge,
+  EuiCard,
+  EuiCheckableCard,
 } from '../../../../src/components';
 
 const scope = {
   EuiNotificationBadge,
+  EuiCard,
+  EuiCheckableCard,
   EuiBadgeGroup,
   EuiBetaBadge,
   EuiBadge,
