@@ -10,29 +10,28 @@ import {
   EuiTitle,
 } from '../../../../src/components';
 
-const badges = [
-  'default',
-  'hollow',
-  'primary',
-  'secondary',
-  'accent',
-  'warning',
-  'danger',
-];
-
-const customBadges = [
-  '#DDD',
-  '#AAA',
-  '#666',
-  '#333',
-  '#BADA55',
-  '#FCF7BC',
-  '#FEA27F',
-  '#FFA500',
-  '#0000FF',
-];
-
 export default () => {
+  const badges = [
+    'default',
+    'hollow',
+    'primary',
+    'secondary',
+    'accent',
+    'warning',
+    'danger',
+  ];
+
+  const customBadges = [
+    '#DDD',
+    '#AAA',
+    '#666',
+    '#333',
+    '#BADA55',
+    '#FCF7BC',
+    '#FEA27F',
+    '#FFA500',
+    '#0000FF',
+  ];
   const [isDisabled, setDisabled] = useState(false);
 
   return (

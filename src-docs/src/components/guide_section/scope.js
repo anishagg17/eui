@@ -126,9 +126,17 @@ import {
   EuiBasicTable,
   EuiHealth,
   EuiAspectRatio,
+  EuiBadge,
+  EuiBetaBadge,
+  EuiBadgeGroup,
+  EuiNotificationBadge,
 } from '../../../../src/components';
 
 const scope = {
+  EuiNotificationBadge,
+  EuiBadgeGroup,
+  EuiBetaBadge,
+  EuiBadge,
   EuiAspectRatio,
   EuiHealth,
   EuiBasicTable,

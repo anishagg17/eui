@@ -9,7 +9,7 @@ import {
 } from '../../../../../src/components';
 
 /*
-Example user object:s
+Example user object:
 
 {
   id: '1',
