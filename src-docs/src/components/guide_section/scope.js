@@ -125,9 +125,11 @@ import {
   EuiDataGrid,
   EuiBasicTable,
   EuiHealth,
+  EuiAspectRatio,
 } from '../../../../src/components';
 
 const scope = {
+  EuiAspectRatio,
   EuiHealth,
   EuiBasicTable,
   EuiDataGrid,
