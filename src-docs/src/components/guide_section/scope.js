@@ -16,6 +16,7 @@ import HeaderUserMenu from '../../views/header/header_user_menu';
 import EuiTabsExample from '../../views/tabs/tabbed_content';
 import { createDataStore } from '../../views/tables/data_store';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
+import { makeList } from '../../views/drag_and_drop/helper';
 import { VISUALIZATION_COLORS, formatDate } from '../../../../src/services';
 import { fake } from 'faker';
 import {
@@ -135,10 +136,16 @@ import {
   EuiDescriptionList,
   EuiDescriptionListDescription,
   EuiDescriptionListTitle,
+  EuiDragDropContext,
+  EuiDroppable,
+  EuiDraggable,
 } from '../../../../src/components';
 
 const scope = {
+  EuiDraggable,
+  EuiDroppable,
   EuiNotificationBadge,
+  EuiDragDropContext,
   EuiCard,
   EuiCheckableCard,
   EuiDescriptionList,
@@ -273,6 +280,7 @@ const scope = {
   useContext,
   createDataStore,
   formatDate,
+  makeList,
 };
 
 export default scope;
