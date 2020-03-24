@@ -20,47 +20,48 @@ import {
   EuiCopy,
 } from '../../../../src/components';
 
-const iconTypes = [
-  'logoAppSearch',
-  'logoBeats',
-  'logoBusinessAnalytics',
-  'logoCode',
-  'logoCloud',
-  'logoCloudEnterprise',
-  'logoElastic',
-  'logoElasticStack',
-  'logoElasticsearch',
-  'logoEnterpriseSearch',
-  'logoKibana',
-  'logoLogging',
-  'logoLogstash',
-  'logoMaps',
-  'logoMetrics',
-  'logoObservability',
-  'logoSecurity',
-  'logoSiteSearch',
-  'logoUptime',
-  'logoWorkplaceSearch',
-].sort();
-
-export default () => (
-  <EuiFlexGrid columns={4}>
-    {iconTypes.map(iconType => (
-      <EuiFlexItem
-        className="guideDemo__icon"
-        key={iconType}
-        style={{ width: '200px' }}>
-        <EuiCopy textToCopy={iconType} afterMessage={`${iconType} copied`}>
-          {copy => (
-            <EuiPanel onClick={copy} className="eui-textCenter">
-              <EuiIcon type={iconType} size="xl" />
-              <EuiText size="s">
-                <p>{iconType}</p>
-              </EuiText>
-            </EuiPanel>
-          )}
-        </EuiCopy>
-      </EuiFlexItem>
-    ))}
-  </EuiFlexGrid>
-);
+export default () => {
+  const iconTypes = [
+    'logoAppSearch',
+    'logoBeats',
+    'logoBusinessAnalytics',
+    'logoCode',
+    'logoCloud',
+    'logoCloudEnterprise',
+    'logoElastic',
+    'logoElasticStack',
+    'logoElasticsearch',
+    'logoEnterpriseSearch',
+    'logoKibana',
+    'logoLogging',
+    'logoLogstash',
+    'logoMaps',
+    'logoMetrics',
+    'logoObservability',
+    'logoSecurity',
+    'logoSiteSearch',
+    'logoUptime',
+    'logoWorkplaceSearch',
+  ].sort();
+  return (
+    <EuiFlexGrid columns={4}>
+      {iconTypes.map(iconType => (
+        <EuiFlexItem
+          className="guideDemo__icon"
+          key={iconType}
+          style={{ width: '200px' }}>
+          <EuiCopy textToCopy={iconType} afterMessage={`${iconType} copied`}>
+            {copy => (
+              <EuiPanel onClick={copy} className="eui-textCenter">
+                <EuiIcon type={iconType} size="xl" />
+                <EuiText size="s">
+                  <p>{iconType}</p>
+                </EuiText>
+              </EuiPanel>
+            )}
+          </EuiCopy>
+        </EuiFlexItem>
+      ))}
+    </EuiFlexGrid>
+  );
+};

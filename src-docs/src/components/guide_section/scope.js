@@ -139,10 +139,12 @@ import {
   EuiDragDropContext,
   EuiDroppable,
   EuiDraggable,
+  EuiCopy,
   EuiEmptyPrompt,
 } from '../../../../src/components';
 
 const scope = {
+  EuiCopy,
   EuiEmptyPrompt,
   EuiDraggable,
   EuiDroppable,

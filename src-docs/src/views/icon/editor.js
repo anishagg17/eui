@@ -20,55 +20,57 @@ import {
   EuiCopy,
 } from '../../../../src/components';
 
-const iconTypes = [
-  'editorAlignCenter',
-  'editorAlignLeft',
-  'editorAlignRight',
-  'editorBold',
-  'editorCodeBlock',
-  'editorComment',
-  'editorDistributeHorizontal',
-  'editorDistributeVertical',
-  'editorHeading',
-  'editorItalic',
-  'editorItemAlignBottom',
-  'editorItemAlignCenter',
-  'editorItemAlignLeft',
-  'editorItemAlignMiddle',
-  'editorItemAlignRight',
-  'editorItemAlignTop',
-  'editorLink',
-  'editorOrderedList',
-  'editorPositionBottomLeft',
-  'editorPositionBottomRight',
-  'editorPositionTopLeft',
-  'editorPositionTopRight',
-  'editorRedo',
-  'editorStrike',
-  'editorTable',
-  'editorUnderline',
-  'editorUndo',
-  'editorUnorderedList',
-];
+export default () => {
+  const iconTypes = [
+    'editorAlignCenter',
+    'editorAlignLeft',
+    'editorAlignRight',
+    'editorBold',
+    'editorCodeBlock',
+    'editorComment',
+    'editorDistributeHorizontal',
+    'editorDistributeVertical',
+    'editorHeading',
+    'editorItalic',
+    'editorItemAlignBottom',
+    'editorItemAlignCenter',
+    'editorItemAlignLeft',
+    'editorItemAlignMiddle',
+    'editorItemAlignRight',
+    'editorItemAlignTop',
+    'editorLink',
+    'editorOrderedList',
+    'editorPositionBottomLeft',
+    'editorPositionBottomRight',
+    'editorPositionTopLeft',
+    'editorPositionTopRight',
+    'editorRedo',
+    'editorStrike',
+    'editorTable',
+    'editorUnderline',
+    'editorUndo',
+    'editorUnorderedList',
+  ];
 
-export default () => (
-  <EuiFlexGrid columns={4}>
-    {iconTypes.map(iconType => (
-      <EuiFlexItem
-        className="guideDemo__icon"
-        key={iconType}
-        style={{ width: '200px' }}>
-        <EuiCopy textToCopy={iconType} afterMessage={`${iconType} copied`}>
-          {copy => (
-            <EuiPanel onClick={copy} className="eui-textCenter">
-              <EuiIcon type={iconType} />
-              <EuiText size="s">
-                <p>{iconType}</p>
-              </EuiText>
-            </EuiPanel>
-          )}
-        </EuiCopy>
-      </EuiFlexItem>
-    ))}
-  </EuiFlexGrid>
-);
+  return (
+    <EuiFlexGrid columns={4}>
+      {iconTypes.map(iconType => (
+        <EuiFlexItem
+          className="guideDemo__icon"
+          key={iconType}
+          style={{ width: '200px' }}>
+          <EuiCopy textToCopy={iconType} afterMessage={`${iconType} copied`}>
+            {copy => (
+              <EuiPanel onClick={copy} className="eui-textCenter">
+                <EuiIcon type={iconType} />
+                <EuiText size="s">
+                  <p>{iconType}</p>
+                </EuiText>
+              </EuiPanel>
+            )}
+          </EuiCopy>
+        </EuiFlexItem>
+      ))}
+    </EuiFlexGrid>
+  );
+};
