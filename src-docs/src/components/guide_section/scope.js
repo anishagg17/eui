@@ -139,9 +139,11 @@ import {
   EuiDragDropContext,
   EuiDroppable,
   EuiDraggable,
+  EuiEmptyPrompt,
 } from '../../../../src/components';
 
 const scope = {
+  EuiEmptyPrompt,
   EuiDraggable,
   EuiDroppable,
   EuiNotificationBadge,
