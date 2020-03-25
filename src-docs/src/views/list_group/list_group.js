@@ -18,15 +18,17 @@ export default class extends Component {
       flushWidth: false,
       showBorder: false,
     };
+    this.toggleBorder = this.toggleBorder.bind(this);
+    this.toggleFlushWidth = this.toggleFlushWidth.bind(this);
   }
 
-  toggleFlushWidth = () => {
+  toggleFlushWidth() {
     this.setState(prevState => ({ flushWidth: !prevState.flushWidth }));
-  };
+  }
 
-  toggleBorder = () => {
+  toggleBorder() {
     this.setState(prevState => ({ showBorder: !prevState.showBorder }));
-  };
+  }
 
   render() {
     const { flushWidth, showBorder } = this.state;

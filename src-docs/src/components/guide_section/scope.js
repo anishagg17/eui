@@ -140,10 +140,14 @@ import {
   EuiDroppable,
   EuiDraggable,
   EuiCopy,
+  EuiListGroup,
+  EuiListGroupItem,
   EuiEmptyPrompt,
 } from '../../../../src/components';
 
 const scope = {
+  EuiListGroup,
+  EuiListGroupItem,
   EuiCopy,
   EuiEmptyPrompt,
   EuiDraggable,

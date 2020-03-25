@@ -11,17 +11,26 @@ export default class extends Component {
       favorite2: 'link2',
       favorite3: undefined,
     };
+    [
+      'toggleBorder',
+      'link1Clicked',
+      'link2Clicked',
+      'link3Clicked',
+      'toggleFlushWidth',
+    ].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  toggleFlushWidth = () => {
+  toggleFlushWidth() {
     this.setState(prevState => ({ flushWidth: !prevState.flushWidth }));
-  };
+  }
 
-  toggleBorder = () => {
+  toggleBorder() {
     this.setState(prevState => ({ showBorder: !prevState.showBorder }));
-  };
+  }
 
-  link1Clicked = () => {
+  link1Clicked() {
     this.setState(prevState => {
       return {
         favorite1: prevState.favorite1 === 'link1' ? undefined : 'link1',
@@ -30,9 +39,9 @@ export default class extends Component {
     if (this.favorite1 === undefined) {
       document.activeElement.blur();
     }
-  };
+  }
 
-  link2Clicked = () => {
+  link2Clicked() {
     this.setState(prevState => {
       return {
         favorite2: prevState.favorite2 === 'link2' ? undefined : 'link2',
@@ -41,9 +50,9 @@ export default class extends Component {
     if (this.favorite2 === undefined) {
       document.activeElement.blur();
     }
-  };
+  }
 
-  link3Clicked = () => {
+  link3Clicked() {
     this.setState(prevState => {
       return {
         favorite3: prevState.favorite3 === 'link3' ? undefined : 'link3',
@@ -52,7 +61,7 @@ export default class extends Component {
     if (this.favorite3 === undefined) {
       document.activeElement.blur();
     }
-  };
+  }
 
   render() {
     const { favorite1, favorite2, favorite3 } = this.state;

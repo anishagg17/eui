@@ -5,43 +5,42 @@ import {
   EuiPinnableListGroupItemProps,
 } from '../../../../src/components/list_group';
 
-const someListItems: EuiPinnableListGroupItemProps[] = [
-  {
-    label: 'Label with iconType',
-    iconType: 'stop',
-  },
-  {
-    label: 'Pinned button with onClick',
-    pinned: true,
-    onClick: e => {
-      console.log('Pinned button clicked', e);
+export default () => {
+  const someListItems = [
+    {
+      label: 'Label with iconType',
+      iconType: 'stop',
     },
-  },
-  {
-    label: 'Link with href and custom pin titles',
-    href: '/#',
-  },
-  {
-    label: 'Active link',
-    isActive: true,
-    href: '/#',
-  },
-  {
-    label: 'Custom extra actions will override pinning ability',
-    extraAction: {
-      iconType: 'bell',
-      alwaysShow: true,
-      'aria-label': 'bell',
+    {
+      label: 'Pinned button with onClick',
+      pinned: true,
+      onClick: e => {
+        console.log('Pinned button clicked', e);
+      },
     },
-  },
-  {
-    label: 'Item with pinnability turned off',
-    pinnable: false,
-  },
-];
-
-export default () => (
-  <>
+    {
+      label: 'Link with href and custom pin titles',
+      href: '/#',
+    },
+    {
+      label: 'Active link',
+      isActive: true,
+      href: '/#',
+    },
+    {
+      label: 'Custom extra actions will override pinning ability',
+      extraAction: {
+        iconType: 'bell',
+        alwaysShow: true,
+        'aria-label': 'bell',
+      },
+    },
+    {
+      label: 'Item with pinnability turned off',
+      pinnable: false,
+    },
+  ];
+  return (
     <EuiPinnableListGroup
       listItems={someListItems}
       onPinClick={item => {
@@ -53,5 +52,5 @@ export default () => (
         `Unpin ${item.label}`
       }
     />
-  </>
-);
+  );
+};
