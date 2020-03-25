@@ -147,6 +147,8 @@ import {
   EuiLoadingElastic,
   EuiLoadingChart,
   EuiLoadingContent,
+  EuiProgress,
+  EuiStat,
   EuiLoadingSpinner,
 } from '../../../../src/components';
 
@@ -155,6 +157,8 @@ const scope = {
   EuiLoadingElastic,
   EuiLoadingChart,
   EuiLoadingContent,
+  EuiProgress,
+  EuiStat,
   EuiLoadingSpinner,
   EuiListGroup,
   EuiListGroupItem,
