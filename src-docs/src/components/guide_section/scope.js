@@ -143,9 +143,19 @@ import {
   EuiListGroup,
   EuiListGroupItem,
   EuiEmptyPrompt,
+  EuiLoadingKibana,
+  EuiLoadingElastic,
+  EuiLoadingChart,
+  EuiLoadingContent,
+  EuiLoadingSpinner,
 } from '../../../../src/components';
 
 const scope = {
+  EuiLoadingKibana,
+  EuiLoadingElastic,
+  EuiLoadingChart,
+  EuiLoadingContent,
+  EuiLoadingSpinner,
   EuiListGroup,
   EuiListGroupItem,
   EuiCopy,
