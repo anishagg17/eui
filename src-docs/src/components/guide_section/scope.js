@@ -150,9 +150,11 @@ import {
   EuiProgress,
   EuiStat,
   EuiLoadingSpinner,
+  EuiTextAlign,
 } from '../../../../src/components';
 
 const scope = {
+  EuiTextAlign,
   EuiLoadingKibana,
   EuiLoadingElastic,
   EuiLoadingChart,

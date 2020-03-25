@@ -17,11 +17,12 @@ export default class extends Component {
     this.state = {
       isLoading: false,
     };
+    this.onToggleChange = this.onToggleChange.bind(this);
   }
 
-  onToggleChange = e => {
+  onToggleChange(e) {
     this.setState({ isLoading: e.target.checked });
-  };
+  }
 
   render() {
     return (
