@@ -26,31 +26,37 @@ export default class extends Component {
       toasts: [],
     };
 
+    ['addToast', 'removeToast', 'removeAllToasts', 'getRandomToast'].forEach(
+      method => {
+        this[method] = this[method].bind(this);
+      }
+    );
+
     addToastHandler = this.addToast;
     removeAllToastsHandler = this.removeAllToasts;
   }
 
-  addToast = () => {
+  addToast() {
     const toast = this.getRandomToast();
 
     this.setState({
       toasts: this.state.toasts.concat(toast),
     });
-  };
+  }
 
-  removeToast = removedToast => {
+  removeToast(removedToast) {
     this.setState(prevState => ({
       toasts: prevState.toasts.filter(toast => toast.id !== removedToast.id),
     }));
-  };
+  }
 
-  removeAllToasts = () => {
+  removeAllToasts() {
     this.setState({
       toasts: [],
     });
-  };
+  }
 
-  getRandomToast = () => {
+  getRandomToast() {
     const toasts = [
       {
         title:
@@ -112,7 +118,7 @@ export default class extends Component {
       id: toastId++,
       ...toasts[Math.floor(Math.random() * toasts.length)],
     };
-  };
+  }
 
   render() {
     return (

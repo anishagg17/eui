@@ -151,9 +151,13 @@ import {
   EuiStat,
   EuiLoadingSpinner,
   EuiTextAlign,
+  EuiToast,
+  EuiGlobalToastList,
 } from '../../../../src/components';
 
 const scope = {
+  EuiGlobalToastList,
+  EuiToast,
   EuiTextAlign,
   EuiLoadingKibana,
   EuiLoadingElastic,
