@@ -9,18 +9,24 @@ import {
 } from '../../../../src/components';
 
 export default class extends Component {
-  state = {
-    minimumDuration: 3000,
-    hide: false,
-  };
+  constructor(props) {
+    super(props);
 
-  onChangeMinimumDuration = event => {
+    this.state = {
+      minimumDuration: 3000,
+      hide: false,
+    };
+    ['onChangeMinimumDuration', 'onChangeHide'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
+  }
+  onChangeMinimumDuration(event) {
     this.setState({ minimumDuration: parseInt(event.target.value, 10) });
-  };
+  }
 
-  onChangeHide = event => {
+  onChangeHide(event) {
     this.setState({ hide: event.target.checked });
-  };
+  }
 
   render() {
     return (

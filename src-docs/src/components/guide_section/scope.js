@@ -156,9 +156,11 @@ import {
   EuiKeyboardAccessible,
   EuiScreenReaderOnly,
   EuiSkipLink,
+  EuiDelayHide,
 } from '../../../../src/components';
 
 const scope = {
+  EuiDelayHide,
   EuiScreenReaderOnly,
   EuiSkipLink,
   EuiGlobalToastList,
