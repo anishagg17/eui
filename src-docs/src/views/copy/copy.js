@@ -9,22 +9,29 @@ import {
 } from '../../../../src/components/';
 
 export default class extends Component {
-  state = {
-    copyText: 'I am the text that will be copied',
-  };
+  constructor(props) {
+    super(props);
 
-  onChange = e => {
+    this.state = {
+      copyText: 'I am the text that will be copied',
+    };
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(e) {
     this.setState({
       copyText: e.target.value,
     });
-  };
+  }
 
   render() {
     return (
       <div>
-        <EuiFormRow label="Enter text that will be copied to clipboard">
-          <EuiFieldText value={this.state.copyText} onChange={this.onChange} />
-        </EuiFormRow>
+        <EuiFieldText
+          placeholder="Enter text that will be copied to clipboard"
+          value={this.state.copyText}
+          onChange={this.onChange}
+        />
 
         <EuiSpacer size="m" />
 

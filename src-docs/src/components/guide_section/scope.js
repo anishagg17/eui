@@ -153,11 +153,17 @@ import {
   EuiTextAlign,
   EuiToast,
   EuiGlobalToastList,
+  EuiKeyboardAccessible,
+  EuiScreenReaderOnly,
+  EuiSkipLink,
 } from '../../../../src/components';
 
 const scope = {
+  EuiScreenReaderOnly,
+  EuiSkipLink,
   EuiGlobalToastList,
   EuiToast,
+  EuiKeyboardAccessible,
   EuiTextAlign,
   EuiLoadingKibana,
   EuiLoadingElastic,
