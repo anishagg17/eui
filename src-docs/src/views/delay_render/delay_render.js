@@ -9,18 +9,24 @@ import {
 } from '../../../../src/components';
 
 export default class extends Component {
-  state = {
-    minimumDelay: 3000,
-    render: false,
-  };
+  constructor(props) {
+    super(props);
 
-  onChangeMinimumDelay = event => {
+    this.state = {
+      minimumDelay: 3000,
+      render: false,
+    };
+    ['onChangeMinimumDelay', 'onChangeHide'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
+  }
+  onChangeMinimumDelay(event) {
     this.setState({ minimumDelay: parseInt(event.target.value, 10) });
-  };
+  }
 
-  onChangeHide = event => {
+  onChangeHide(event) {
     this.setState({ render: event.target.checked });
-  };
+  }
 
   render() {
     const status = this.state.render ? 'showing' : 'hidden';
