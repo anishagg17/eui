@@ -18,13 +18,14 @@ export default class extends Component {
     this.state = {
       isDisabled: false,
     };
+    this.toggleDisabled = this.toggleDisabled.bind(this);
   }
 
-  toggleDisabled = () => {
+  toggleDisabled() {
     this.setState(prevState => ({
       isDisabled: !prevState.isDisabled,
     }));
-  };
+  }
 
   render() {
     const { isDisabled } = this.state;

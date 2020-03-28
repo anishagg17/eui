@@ -16,6 +16,7 @@ import HeaderUserMenu from '../../views/header/header_user_menu';
 import EuiTabsExample from '../../views/tabs/tabbed_content';
 import { createDataStore } from '../../views/tables/data_store';
 import { DisplayToggles } from '../../views/form_controls/display_toggles';
+import FormExample from '../../views/form_compressed/form_compressed';
 import { makeList } from '../../views/drag_and_drop/helper';
 import { VISUALIZATION_COLORS, formatDate } from '../../../../src/services';
 import { fake } from 'faker';
@@ -317,6 +318,7 @@ const scope = {
   createDataStore,
   formatDate,
   makeList,
+  FormExample,
 };
 
 export default scope;
