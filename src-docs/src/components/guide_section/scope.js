@@ -10,7 +10,7 @@ import {
   useContext,
 } from 'react';
 import { EuiInnerText } from '../../../../src/components/inner_text';
-
+import { isColorDark } from '../../../../src/services';
 import makeId from '../../../../src/components/form/form_row/make_id';
 import SuperSelectComplexExample from '../../views/super_select/super_select_complex';
 import HeaderSpacesMenu from '../../views/header/header_spaces_menu';
@@ -162,9 +162,15 @@ import {
   EuiDelayHide,
   EuiMark,
   EuiHighlight,
+  EuiI18nNumber,
+  EuiI18n,
+  EuiMutationObserver,
 } from '../../../../src/components';
 
 const scope = {
+  EuiMutationObserver,
+  EuiI18n,
+  EuiI18nNumber,
   EuiHighlight,
   EuiMark,
   EuiDelayHide,
@@ -326,6 +332,7 @@ const scope = {
   formatDate,
   makeList,
   FormExample,
+  isColorDark,
 };
 
 export default scope;

@@ -10,7 +10,7 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-export class MutationObserver extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -19,28 +19,32 @@ export class MutationObserver extends Component {
       buttonColor: 'primary',
       items: ['Item 1', 'Item 2', 'Item 3'],
     };
+
+    ['toggleButtonColor', 'addItem', 'onMutation'].forEach(method => {
+      this[method] = this[method].bind(this);
+    });
   }
 
-  toggleButtonColor = () => {
+  toggleButtonColor() {
     this.setState(({ buttonColor }) => ({
       buttonColor: buttonColor === 'primary' ? 'warning' : 'primary',
     }));
-  };
+  }
 
-  addItem = () => {
+  addItem() {
     this.setState(({ items }) => ({
       items: [...items, `Item ${items.length + 1}`],
     }));
-  };
+  }
 
-  onMutation = ([{ type }]) => {
+  onMutation([{ type }]) {
     this.setState({
       lastMutation:
         type === 'attributes'
           ? 'button class name changed'
           : 'DOM tree changed',
     });
-  };
+  }
 
   render() {
     return (

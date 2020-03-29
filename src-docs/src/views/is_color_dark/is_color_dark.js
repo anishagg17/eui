@@ -4,17 +4,17 @@ import { EuiFlexGrid, EuiFlexItem } from '../../../../src/components';
 
 import { isColorDark } from '../../../../src/services';
 
-const SWATCH_STYLE = {
-  width: 100,
-  height: 100,
-  padding: 16,
-};
-
-const rgb = (r, g, b) => {
-  return `rgb(${r}, ${g}, ${b})`;
-};
-
 export default () => {
+  const SWATCH_STYLE = {
+    width: 100,
+    height: 100,
+    padding: 16,
+  };
+
+  const rgb = (r, g, b) => {
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+
   const DARK_COLORS = [
     [0, 104, 55],
     [165, 0, 38],

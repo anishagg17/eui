@@ -10,7 +10,7 @@ import {
   EuiMutationObserver,
 } from '../../../../src/components';
 
-import { MutationObserver } from './mutation_observer';
+import MutationObserver from './mutation_observer';
 const mutationObserverSource = require('!!raw-loader!./mutation_observer');
 const mutationObserverHtml = renderToHtml(MutationObserver);
 
