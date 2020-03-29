@@ -158,9 +158,13 @@ import {
   EuiScreenReaderOnly,
   EuiSkipLink,
   EuiDelayHide,
+  EuiMark,
+  EuiHighlight,
 } from '../../../../src/components';
 
 const scope = {
+  EuiHighlight,
+  EuiMark,
   EuiDelayHide,
   EuiScreenReaderOnly,
   EuiSkipLink,

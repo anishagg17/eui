@@ -8,7 +8,7 @@ import {
   EuiSwitch,
 } from '../../../../src/components';
 
-export class Highlight extends Component {
+export default class extends Component {
   constructor(props) {
     super(props);
 
@@ -16,26 +16,26 @@ export class Highlight extends Component {
       searchValue: 'jumped over',
       isHighlightAll: false,
     };
+    this.onSearchChange = this.onSearchChange.bind(this);
+    this.setHighlightAll = this.setHighlightAll.bind(this);
   }
 
-  onSearchChange = e => {
+  onSearchChange(e) {
     const searchValue = e.target.value;
     this.setState({
       searchValue,
     });
-  };
+  }
 
-  setHighlightAll = e => {
+  setHighlightAll(e) {
     this.setState({ isHighlightAll: e.target.checked });
-  };
+  }
 
   render() {
     const { searchValue, isHighlightAll } = this.state;
     return (
       <Fragment>
-        <EuiFormRow label="Enter text to highlight substrings within a string">
-          <EuiFieldSearch value={searchValue} onChange={this.onSearchChange} />
-        </EuiFormRow>
+        <EuiFieldSearch value={searchValue} onChange={this.onSearchChange} />
 
         <EuiSpacer size="m" />
         <EuiSwitch

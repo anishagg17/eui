@@ -6,8 +6,8 @@ import { GuideSectionTypes } from '../../components';
 
 import { EuiCode, EuiHighlight, EuiMark } from '../../../../src/components';
 
-import { Highlight } from './highlight';
-import { Mark } from './mark';
+import Highlight from './highlight';
+import Mark from './mark';
 
 const highlightSource = require('!!raw-loader!./highlight');
 const highlightHtml = renderToHtml(Highlight);
