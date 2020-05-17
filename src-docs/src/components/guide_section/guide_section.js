@@ -85,6 +85,53 @@ const humanizeType = type => {
   return humanizedType;
 };
 
+const getRenderedCode = renderedCode => {
+  let code = renderedCode.split('\n');
+  const importStatements = {};
+  let from = false;
+  let bracket = false;
+  let current = [];
+  // eslint-disable-next-line guard-for-in
+  for (const i in code) {
+    let line = code[i];
+
+    if (line.includes('import')) {
+      if (line.includes("from '")) {
+        line = line.split("from '");
+        const lib = line[1].substring(0, line[1].length - 2);
+        const imports = line[0].split('import')[1];
+        const splitImports = imports.split(' ');
+        // eslint-disable-next-line guard-for-in
+        for (const j in splitImports) {
+          if (splitImports[j].length > 0) {
+            if (splitImports[j] === '{') bracket = true;
+            else if (splitImports[j] === '}') bracket = false;
+            else current.push({ imp: splitImports[j], named: bracket });
+          }
+        }
+        console.log(current, 'current', lib);
+        current = [];
+      } else {
+        from = true;
+      }
+      code[i] = '';
+    } else if (line.includes("from '")) {
+      from = false;
+      // console.log('current', current);
+      current = [];
+    } else if (from) {
+      current.push({ imp: line.split(',')[0], named: bracket });
+    }
+
+    if (line.includes('export') || line.includes('()')) {
+      break;
+    }
+  }
+
+  console.log('importStatements', importStatements);
+  return renderedCode;
+};
+
 const nameToCodeClassMap = {
   javascript: 'javascript',
   html: 'html',
@@ -168,41 +215,7 @@ export class GuideSection extends Component {
             /(from )'(..\/)+src\/components\/.*?';/g,
             "from '@elastic/eui';"
           );
-        renderedCode = renderedCode.split('\n');
-        const linesWithImport = [];
-        // eslint-disable-next-line guard-for-in
-        for (const idx in renderedCode) {
-          const line = renderedCode[idx];
-          if (
-            line.includes('import') &&
-            line.includes("from '@elastic/eui';")
-          ) {
-            linesWithImport.push(line);
-            renderedCode[idx] = '';
-          }
-        }
-        if (linesWithImport.length > 1) {
-          linesWithImport[0] = linesWithImport[0].replace(
-            " } from '@elastic/eui';",
-            ','
-          );
-          for (let i = 1; i < linesWithImport.length - 1; i++) {
-            linesWithImport[i] = linesWithImport[i]
-              .replace('import {', '')
-              .replace(" } from '@elastic/eui';", ',');
-          }
-          linesWithImport[linesWithImport.length - 1] = linesWithImport[
-            linesWithImport.length - 1
-          ].replace('import {', '');
-        }
-        const newImport = linesWithImport.join('');
-        renderedCode.unshift(newImport);
-        renderedCode = renderedCode.join('\n');
-        let len = renderedCode.replace('\n\n\n', '\n\n').length;
-        while (len < renderedCode.length) {
-          renderedCode = renderedCode.replace('\n\n\n', '\n\n');
-          len = renderedCode.replace('\n\n\n', '\n\n').length;
-        }
+        renderedCode = getRenderedCode(renderedCode);
       } else if (name === 'html') {
         renderedCode = code.render();
       }
