@@ -11,6 +11,7 @@ import titleConfig from './views/title/playground';
 import imageConfig from './views/image/playground';
 import spacerConfig from './views/spacer/playground';
 import linkConfig from './views/link/playground';
+import breadcrumbsConfig from './views/breadcrumbs/playground';
 
 export const childRoutes = [
   {
@@ -27,6 +28,11 @@ export const childRoutes = [
     path: 'beacon',
     component: () => playground(beaconConfig()),
     name: 'EuiBeacon',
+  },
+  {
+    path: 'breadcrumbs',
+    component: () => playground(breadcrumbsConfig()),
+    name: 'EuiBreadcrumbs',
   },
   {
     path: 'button',
