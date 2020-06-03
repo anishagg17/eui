@@ -10,6 +10,7 @@ import statConfig from './views/stat/playground';
 import titleConfig from './views/title/playground';
 import imageConfig from './views/image/playground';
 import spacerConfig from './views/spacer/playground';
+import linkConfig from './views/link/playground';
 
 export const childRoutes = [
   {
@@ -46,6 +47,11 @@ export const childRoutes = [
     path: 'health',
     component: () => playground(healthConfig()),
     name: 'EuiHealth',
+  },
+  {
+    path: 'link',
+    component: () => playground(linkConfig()),
+    name: 'EuiLink',
   },
   {
     path: 'stat',
