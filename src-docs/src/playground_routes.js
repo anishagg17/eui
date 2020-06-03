@@ -9,6 +9,7 @@ import healthConfig from './views/health/playground';
 import statConfig from './views/stat/playground';
 import titleConfig from './views/title/playground';
 import imageConfig from './views/image/playground';
+import spacerConfig from './views/spacer/playground';
 
 export const childRoutes = [
   {
@@ -50,6 +51,11 @@ export const childRoutes = [
     path: 'stat',
     component: () => playground(statConfig()),
     name: 'EuiStat',
+  },
+  {
+    path: 'spacer',
+    component: () => playground(spacerConfig()),
+    name: 'EuiSpacer',
   },
   {
     path: 'title',
