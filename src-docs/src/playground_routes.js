@@ -12,12 +12,19 @@ import imageConfig from './views/image/playground';
 import spacerConfig from './views/spacer/playground';
 import linkConfig from './views/link/playground';
 import breadcrumbsConfig from './views/breadcrumbs/playground';
+import aspectRatioConfig from './views/aspect_ratio/playground';
+import toggleConfig from './views/toggle/playground';
 
 export const childRoutes = [
   {
     path: 'accordion',
     component: () => playground(accordionConfig()),
     name: 'EuiAccordion',
+  },
+  {
+    path: 'aspectRatio',
+    component: () => playground(aspectRatioConfig()),
+    name: 'EuiAspectRatio',
   },
   {
     path: 'avatar',
@@ -73,6 +80,11 @@ export const childRoutes = [
     path: 'title',
     component: () => playground(titleConfig()),
     name: 'EuiTitle',
+  },
+  {
+    path: 'toggle',
+    component: () => playground(toggleConfig()),
+    name: 'EuiToggle',
   },
   {
     path: '*',
