@@ -19,6 +19,7 @@ import bottomBarConfig from './views/bottom_bar/playground';
 import panelConfig from './views/panel/playground';
 import paginationConfig from './views/pagination/playground';
 import treeViewConfig from './views/tree_view/playground';
+import stepsConfig from './views/steps/playground';
 
 export const childRoutes = [
   {
@@ -95,6 +96,11 @@ export const childRoutes = [
     path: 'stat',
     component: () => playground(statConfig()),
     name: 'EuiStat',
+  },
+  {
+    path: 'steps',
+    component: () => playground(stepsConfig()),
+    name: 'EuiSteps',
   },
   {
     path: 'spacer',
