@@ -15,6 +15,7 @@ import breadcrumbsConfig from './views/breadcrumbs/playground';
 import aspectRatioConfig from './views/aspect_ratio/playground';
 import toggleConfig from './views/toggle/playground';
 import horizontalRuleConfig from './views/horizontal_rule/playground';
+import bottomBarConfig from './views/bottom_bar/playground';
 
 export const childRoutes = [
   {
@@ -36,6 +37,11 @@ export const childRoutes = [
     path: 'beacon',
     component: () => playground(beaconConfig()),
     name: 'EuiBeacon',
+  },
+  {
+    path: 'bottomBar',
+    component: () => playground(bottomBarConfig()),
+    name: 'EuiBottomBar',
   },
   {
     path: 'breadcrumbs',
