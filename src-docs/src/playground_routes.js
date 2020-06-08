@@ -17,6 +17,7 @@ import toggleConfig from './views/toggle/playground';
 import horizontalRuleConfig from './views/horizontal_rule/playground';
 import bottomBarConfig from './views/bottom_bar/playground';
 import panelConfig from './views/panel/playground';
+import paginationConfig from './views/pagination/playground';
 
 export const childRoutes = [
   {
@@ -78,6 +79,11 @@ export const childRoutes = [
     path: 'link',
     component: () => playground(linkConfig()),
     name: 'EuiLink',
+  },
+  {
+    path: 'pagination',
+    component: () => playground(paginationConfig()),
+    name: 'EuiPagination',
   },
   {
     path: 'panel',
