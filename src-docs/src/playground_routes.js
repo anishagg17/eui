@@ -14,6 +14,7 @@ import linkConfig from './views/link/playground';
 import breadcrumbsConfig from './views/breadcrumbs/playground';
 import aspectRatioConfig from './views/aspect_ratio/playground';
 import toggleConfig from './views/toggle/playground';
+import horizontalRuleConfig from './views/horizontal_rule/playground';
 
 export const childRoutes = [
   {
@@ -60,6 +61,11 @@ export const childRoutes = [
     path: 'health',
     component: () => playground(healthConfig()),
     name: 'EuiHealth',
+  },
+  {
+    path: 'horizontalRule',
+    component: () => playground(horizontalRuleConfig()),
+    name: 'EuiHorizontalRule',
   },
   {
     path: 'link',
