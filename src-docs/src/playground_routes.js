@@ -18,6 +18,7 @@ import horizontalRuleConfig from './views/horizontal_rule/playground';
 import bottomBarConfig from './views/bottom_bar/playground';
 import panelConfig from './views/panel/playground';
 import paginationConfig from './views/pagination/playground';
+import treeViewConfig from './views/tree_view/playground';
 
 export const childRoutes = [
   {
@@ -109,6 +110,11 @@ export const childRoutes = [
     path: 'toggle',
     component: () => playground(toggleConfig()),
     name: 'EuiToggle',
+  },
+  {
+    path: 'treeView',
+    component: () => playground(treeViewConfig()),
+    name: 'EuiTreeView',
   },
   {
     path: '*',

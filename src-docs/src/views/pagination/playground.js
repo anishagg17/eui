@@ -20,10 +20,10 @@ export default () => {
   propsToUse.onPageClick = {
     ...propsToUse.onPageClick,
     type: PropTypes.Function,
-    value: 'e => setActivePage(e)',
+    value: 'activePage => setActivePage(activePage)',
     description: 'used to set activePage',
     propHook: {
-      what: 'e',
+      what: 'activePage',
       into: 'activePage',
     },
   };
