@@ -16,6 +16,7 @@ import aspectRatioConfig from './views/aspect_ratio/playground';
 import toggleConfig from './views/toggle/playground';
 import horizontalRuleConfig from './views/horizontal_rule/playground';
 import bottomBarConfig from './views/bottom_bar/playground';
+import panelConfig from './views/panel/playground';
 
 export const childRoutes = [
   {
@@ -77,6 +78,11 @@ export const childRoutes = [
     path: 'link',
     component: () => playground(linkConfig()),
     name: 'EuiLink',
+  },
+  {
+    path: 'panel',
+    component: () => playground(panelConfig()),
+    name: 'EuiPanel',
   },
   {
     path: 'stat',

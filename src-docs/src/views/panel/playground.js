@@ -1,33 +1,33 @@
 import { PropTypes } from 'react-view';
-import { EuiBottomBar, EuiText } from '../../../../src/components/';
+import { EuiPanel, EuiText } from '../../../../src/components/';
 import propUtilityForPlayground from '../../services/playground/props';
 
 export default () => {
-  const docgenInfo = Array.isArray(EuiBottomBar.__docgenInfo)
-    ? EuiBottomBar.__docgenInfo[0]
-    : EuiBottomBar.__docgenInfo;
+  const docgenInfo = Array.isArray(EuiPanel.__docgenInfo)
+    ? EuiPanel.__docgenInfo[0]
+    : EuiPanel.__docgenInfo;
   const propsToUse = propUtilityForPlayground(docgenInfo.props);
   propsToUse.children = {
     value: `<EuiText>
     <p>
-      Any content inside of<strong>EuiBottomBar</strong> will appear here.
+      Any content inside of<strong>EuiPanel</strong> will appear here.
     </p>
   </EuiText>`,
     type: PropTypes.ReactNode,
-    description: 'EuiBottomBar content',
+    description: 'EuiPanel content',
     hidden: true,
   };
 
   return {
-    componentName: 'EuiBottomBar',
+    componentName: 'EuiPanel',
     props: propsToUse,
     scope: {
-      EuiBottomBar,
+      EuiPanel,
       EuiText,
     },
     imports: {
       '@elastic/eui': {
-        named: ['EuiBottomBar', 'EuiText'],
+        named: ['EuiPanel', 'EuiText'],
       },
     },
   };
