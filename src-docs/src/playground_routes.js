@@ -20,6 +20,7 @@ import panelConfig from './views/panel/playground';
 import paginationConfig from './views/pagination/playground';
 import treeViewConfig from './views/tree_view/playground';
 import stepsConfig from './views/steps/playground';
+import { flexGroupConfig, flexGridConfig } from './views/flex/playground';
 
 export const childRoutes = [
   {
@@ -61,6 +62,16 @@ export const childRoutes = [
     path: 'callout',
     component: () => playground(calloutConfig()),
     name: 'EuiCallOut',
+  },
+  {
+    path: 'flexGrid',
+    component: () => playground(flexGridConfig()),
+    name: 'EuiFlexGrid',
+  },
+  {
+    path: 'flexGroup',
+    component: () => playground(flexGroupConfig()),
+    name: 'EuiFlexGroup',
   },
   {
     path: 'image',
