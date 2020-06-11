@@ -21,6 +21,7 @@ import paginationConfig from './views/pagination/playground';
 import treeViewConfig from './views/tree_view/playground';
 import stepsConfig from './views/steps/playground';
 import { flexGroupConfig, flexGridConfig } from './views/flex/playground';
+import { facetButtonConfig, facetLayoutConfig } from './views/facet/playground';
 
 export const childRoutes = [
   {
@@ -62,6 +63,16 @@ export const childRoutes = [
     path: 'callout',
     component: () => playground(calloutConfig()),
     name: 'EuiCallOut',
+  },
+  {
+    path: 'facetButton',
+    component: () => playground(facetButtonConfig()),
+    name: 'EuiFacetButton',
+  },
+  {
+    path: 'facetLayout',
+    component: () => playground(facetLayoutConfig()),
+    name: 'EuiFacetGroup',
   },
   {
     path: 'flexGrid',

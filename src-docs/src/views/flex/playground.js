@@ -47,11 +47,15 @@ export const flexGridConfig = () => {
     ? EuiFlexGrid.__docgenInfo[0]
     : EuiFlexGrid.__docgenInfo;
   const propsToUse = propUtilityForPlayground(docgenInfo.props);
-  propsToUse.component = { type: PropTypes.String, value: 'div' };
+  propsToUse.component = {
+    ...propsToUse.component,
+    type: PropTypes.String,
+    value: 'div',
+  };
   propsToUse.children = {
     type: PropTypes.ReactNode,
-    value: ` <EuiFlexItem>Content grid item</EuiFlexItem>
-    <EuiFlexItem style={{ minWidth: 300 }}>Min-width 300px</EuiFlexItem>
+    value: `<EuiFlexItem>Content grid item</EuiFlexItem>
+    <EuiFlexItem style={{ minWidth: 100 }}>Min-width 300px</EuiFlexItem>
     <EuiFlexItem component="span">
     This is a span component
   </EuiFlexItem>
