@@ -22,7 +22,11 @@ import treeViewConfig from './views/tree_view/playground';
 import stepsConfig from './views/steps/playground';
 import { flexGroupConfig, flexGridConfig } from './views/flex/playground';
 import { facetButtonConfig, facetLayoutConfig } from './views/facet/playground';
-import { badgeConfig, notificationBadgeConfig } from './views/badge/playground';
+import {
+  badgeConfig,
+  notificationBadgeConfig,
+  betaBadgeConfig,
+} from './views/badge/playground';
 
 export const childRoutes = [
   {
@@ -44,6 +48,11 @@ export const childRoutes = [
     path: 'badge',
     component: () => playground(badgeConfig()),
     name: 'EuiBadge',
+  },
+  {
+    path: 'betaBadge',
+    component: () => playground(betaBadgeConfig()),
+    name: 'EuiBetaBadge',
   },
   {
     path: 'notificationBadge',

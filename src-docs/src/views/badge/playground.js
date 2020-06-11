@@ -1,5 +1,9 @@
 import { PropTypes } from 'react-view';
-import { EuiBadge, EuiNotificationBadge } from '../../../../src/components/';
+import {
+  EuiBadge,
+  EuiNotificationBadge,
+  EuiBetaBadge,
+} from '../../../../src/components/';
 import propUtilityForPlayground from '../../services/playground/props';
 
 export const badgeConfig = () => {
@@ -33,6 +37,37 @@ export const badgeConfig = () => {
     imports: {
       '@elastic/eui': {
         named: ['EuiBadge'],
+      },
+    },
+  };
+};
+
+export const betaBadgeConfig = () => {
+  const docgenInfo = Array.isArray(EuiBetaBadge.__docgenInfo)
+    ? EuiBetaBadge.__docgenInfo[0]
+    : EuiBetaBadge.__docgenInfo;
+  const propsToUse = propUtilityForPlayground(docgenInfo.props);
+
+  propsToUse.label = {
+    ...propsToUse.label,
+    type: PropTypes.ReactNode,
+    value: 'content',
+  };
+  propsToUse.iconType = {
+    ...propsToUse.iconType,
+    type: PropTypes.String,
+    value: 'cross',
+  };
+
+  return {
+    componentName: 'EuiBetaBadge',
+    props: propsToUse,
+    scope: {
+      EuiBetaBadge,
+    },
+    imports: {
+      '@elastic/eui': {
+        named: ['EuiBetaBadge'],
       },
     },
   };
