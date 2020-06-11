@@ -20,6 +20,7 @@ import panelConfig from './views/panel/playground';
 import paginationConfig from './views/pagination/playground';
 import treeViewConfig from './views/tree_view/playground';
 import stepsConfig from './views/steps/playground';
+import emptyPromptConfig from './views/empty_prompt/playground';
 import { flexGroupConfig, flexGridConfig } from './views/flex/playground';
 import { facetButtonConfig, facetLayoutConfig } from './views/facet/playground';
 import {
@@ -83,6 +84,11 @@ export const childRoutes = [
     path: 'callout',
     component: () => playground(calloutConfig()),
     name: 'EuiCallOut',
+  },
+  {
+    path: 'emptyPrompt',
+    component: () => playground(emptyPromptConfig()),
+    name: 'EuiEmptyPrompt',
   },
   {
     path: 'facetButton',
