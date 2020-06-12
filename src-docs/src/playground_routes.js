@@ -29,6 +29,10 @@ import {
   betaBadgeConfig,
 } from './views/badge/playground';
 import { iconConfig, tokenConfig } from './views/icon/playground';
+import {
+  loadingConfig,
+  loadingContentConfig,
+} from './views/loading/playground';
 
 export const childRoutes = [
   {
@@ -135,6 +139,16 @@ export const childRoutes = [
     path: 'link',
     component: () => playground(linkConfig()),
     name: 'EuiLink',
+  },
+  {
+    path: 'loading',
+    component: () => playground(loadingConfig()),
+    name: 'EuiLoading',
+  },
+  {
+    path: 'loadingContent',
+    component: () => playground(loadingContentConfig()),
+    name: 'EuiLoadingContent',
   },
   {
     path: 'pagination',
