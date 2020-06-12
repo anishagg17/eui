@@ -35,6 +35,7 @@ import {
   loadingContentConfig,
 } from './views/loading/playground';
 import { textConfig, textColorConfig } from './views/text/playground';
+import { toolTipConfig } from './views/tool_tip/playground';
 
 export const childRoutes = [
   {
@@ -207,6 +208,11 @@ export const childRoutes = [
     path: 'token',
     component: () => playground(tokenConfig()),
     name: 'EuiToken',
+  },
+  {
+    path: 'toolTip',
+    component: () => playground(toolTipConfig()),
+    name: 'EuiToolTip',
   },
   {
     path: 'treeView',
