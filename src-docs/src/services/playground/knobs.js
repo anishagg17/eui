@@ -52,7 +52,7 @@ const Knob = ({
   options = {},
   description,
   placeholder,
-  enumName,
+  // enumName,
 }) => {
   const [val, set] = useValueDebounce(globalVal, globalSet);
   switch (type) {

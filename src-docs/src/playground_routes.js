@@ -33,6 +33,7 @@ import {
   loadingConfig,
   loadingContentConfig,
 } from './views/loading/playground';
+import { textConfig, textColorConfig } from './views/text/playground';
 
 export const childRoutes = [
   {
@@ -174,6 +175,17 @@ export const childRoutes = [
     path: 'spacer',
     component: () => playground(spacerConfig()),
     name: 'EuiSpacer',
+  },
+  {
+    path: 'text',
+    component: () => playground(textConfig()),
+    name: 'EuiText',
+  },
+
+  {
+    path: 'textColor',
+    component: () => playground(textColorConfig()),
+    name: 'EuiText',
   },
   {
     path: 'title',
