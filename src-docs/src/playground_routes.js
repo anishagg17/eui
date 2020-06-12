@@ -21,6 +21,7 @@ import paginationConfig from './views/pagination/playground';
 import treeViewConfig from './views/tree_view/playground';
 import stepsConfig from './views/steps/playground';
 import emptyPromptConfig from './views/empty_prompt/playground';
+import toastConfig from './views/toast/playground';
 import { flexGroupConfig, flexGridConfig } from './views/flex/playground';
 import { facetButtonConfig, facetLayoutConfig } from './views/facet/playground';
 import {
@@ -191,6 +192,11 @@ export const childRoutes = [
     path: 'title',
     component: () => playground(titleConfig()),
     name: 'EuiTitle',
+  },
+  {
+    path: 'toast',
+    component: () => playground(toastConfig()),
+    name: 'EuiToast',
   },
   {
     path: 'toggle',
