@@ -28,6 +28,7 @@ import {
   notificationBadgeConfig,
   betaBadgeConfig,
 } from './views/badge/playground';
+import { iconConfig, tokenConfig } from './views/icon/playground';
 
 export const childRoutes = [
   {
@@ -111,6 +112,11 @@ export const childRoutes = [
     name: 'EuiFlexGroup',
   },
   {
+    path: 'icon',
+    component: () => playground(iconConfig()),
+    name: 'EuiIcon',
+  },
+  {
     path: 'image',
     component: () => playground(imageConfig()),
     name: 'EuiImage',
@@ -164,6 +170,11 @@ export const childRoutes = [
     path: 'toggle',
     component: () => playground(toggleConfig()),
     name: 'EuiToggle',
+  },
+  {
+    path: 'token',
+    component: () => playground(tokenConfig()),
+    name: 'EuiToken',
   },
   {
     path: 'treeView',

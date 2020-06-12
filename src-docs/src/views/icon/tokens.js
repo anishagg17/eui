@@ -22,7 +22,7 @@ import {
   EuiCode,
 } from '../../../../src/components';
 
-const tokens = [
+export const tokens = [
   'tokenString',
   'tokenNumber',
   'tokenBoolean',

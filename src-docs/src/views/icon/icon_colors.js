@@ -21,7 +21,7 @@ import {
   EuiSpacer,
 } from '../../../../src/components';
 
-const iconColors = [
+export const iconColors = [
   'default',
   'primary',
   'secondary',
