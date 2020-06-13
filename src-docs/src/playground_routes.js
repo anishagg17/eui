@@ -37,6 +37,7 @@ import {
 import { textConfig, textColorConfig } from './views/text/playground';
 import { toolTipConfig } from './views/tool_tip/playground';
 import { codeConfig, codeBlockConfig } from './views/code/playground';
+import { commentConfig } from './views/comment/playground';
 
 export const childRoutes = [
   {
@@ -103,6 +104,11 @@ export const childRoutes = [
     path: 'codeBlock',
     component: () => playground(codeBlockConfig()),
     name: 'EuiCodeBlock',
+  },
+  {
+    path: 'comment',
+    component: () => playground(commentConfig()),
+    name: 'EuiComment',
   },
   {
     path: 'emptyPrompt',
