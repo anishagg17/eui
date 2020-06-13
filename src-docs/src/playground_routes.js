@@ -36,6 +36,7 @@ import {
 } from './views/loading/playground';
 import { textConfig, textColorConfig } from './views/text/playground';
 import { toolTipConfig } from './views/tool_tip/playground';
+import { codeConfig, codeBlockConfig } from './views/code/playground';
 
 export const childRoutes = [
   {
@@ -92,6 +93,16 @@ export const childRoutes = [
     path: 'callout',
     component: () => playground(calloutConfig()),
     name: 'EuiCallOut',
+  },
+  {
+    path: 'code',
+    component: () => playground(codeConfig()),
+    name: 'EuiCode',
+  },
+  {
+    path: 'codeBlock',
+    component: () => playground(codeBlockConfig()),
+    name: 'EuiCodeBlock',
   },
   {
     path: 'emptyPrompt',
