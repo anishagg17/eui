@@ -198,7 +198,7 @@ export const childRoutes = [
   {
     path: 'textColor',
     component: () => playground(textColorConfig()),
-    name: 'EuiText',
+    name: 'EuiTextColor',
   },
   {
     path: 'title',
