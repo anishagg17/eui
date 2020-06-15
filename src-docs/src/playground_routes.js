@@ -42,6 +42,7 @@ import { descriptionListConfig } from './views/description_list/playground';
 import { collapsibleNavConfig } from './views/collapsible_nav/playground';
 import { keyPadMenuItemConfig } from './views/key_pad_menu/playground';
 import { sideNavConfig } from './views/side_nav/playground';
+import { cardConfig } from './views/card/playground';
 
 export const childRoutes = [
   {
@@ -98,6 +99,11 @@ export const childRoutes = [
     path: 'callout',
     component: () => playground(calloutConfig()),
     name: 'EuiCallOut',
+  },
+  {
+    path: 'card',
+    component: () => playground(cardConfig()),
+    name: 'EuiCard',
   },
   {
     path: 'code',
