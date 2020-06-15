@@ -39,6 +39,7 @@ import { toolTipConfig } from './views/tool_tip/playground';
 import { codeConfig, codeBlockConfig } from './views/code/playground';
 import { commentConfig } from './views/comment/playground';
 import { descriptionListConfig } from './views/description_list/playground';
+import { collapsibleNavConfig } from './views/collapsible_nav/playground';
 
 export const childRoutes = [
   {
@@ -105,6 +106,11 @@ export const childRoutes = [
     path: 'codeBlock',
     component: () => playground(codeBlockConfig()),
     name: 'EuiCodeBlock',
+  },
+  {
+    path: 'collapsibleNav',
+    component: () => playground(collapsibleNavConfig()),
+    name: 'EuiCollapsibleNav',
   },
   {
     path: 'comment',
