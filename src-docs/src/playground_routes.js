@@ -40,6 +40,7 @@ import { codeConfig, codeBlockConfig } from './views/code/playground';
 import { commentConfig } from './views/comment/playground';
 import { descriptionListConfig } from './views/description_list/playground';
 import { collapsibleNavConfig } from './views/collapsible_nav/playground';
+import { keyPadMenuItemConfig } from './views/key_pad_menu/playground';
 
 export const childRoutes = [
   {
@@ -166,6 +167,11 @@ export const childRoutes = [
     path: 'horizontalRule',
     component: () => playground(horizontalRuleConfig()),
     name: 'EuiHorizontalRule',
+  },
+  {
+    path: 'keyPadMenuItem',
+    component: () => playground(keyPadMenuItemConfig()),
+    name: 'EuiKeyPadMenuItem',
   },
   {
     path: 'link',
