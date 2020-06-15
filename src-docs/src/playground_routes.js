@@ -41,6 +41,7 @@ import { commentConfig } from './views/comment/playground';
 import { descriptionListConfig } from './views/description_list/playground';
 import { collapsibleNavConfig } from './views/collapsible_nav/playground';
 import { keyPadMenuItemConfig } from './views/key_pad_menu/playground';
+import { sideNavConfig } from './views/side_nav/playground';
 
 export const childRoutes = [
   {
@@ -197,6 +198,11 @@ export const childRoutes = [
     path: 'panel',
     component: () => playground(panelConfig()),
     name: 'EuiPanel',
+  },
+  {
+    path: 'sideNav',
+    component: () => playground(sideNavConfig()),
+    name: 'EuiSideNav',
   },
   {
     path: 'stat',
