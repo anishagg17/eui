@@ -42,6 +42,7 @@ import { descriptionListConfig } from './views/description_list/playground';
 import { collapsibleNavConfig } from './views/collapsible_nav/playground';
 import { keyPadMenuItemConfig } from './views/key_pad_menu/playground';
 import { sideNavConfig } from './views/side_nav/playground';
+import { suggestConfig } from './views/suggest/playground';
 import { cardConfig } from './views/card/playground';
 
 export const childRoutes = [
@@ -209,6 +210,11 @@ export const childRoutes = [
     path: 'sideNav',
     component: () => playground(sideNavConfig()),
     name: 'EuiSideNav',
+  },
+  {
+    path: 'suggest',
+    component: () => playground(suggestConfig()),
+    name: 'EuiSuggest',
   },
   {
     path: 'stat',
