@@ -47,6 +47,7 @@ import { cardConfig } from './views/card/playground';
 import { codeEditorConfig } from './views/code_editor/playground';
 import { supperSelectConfig } from './views/super_select/playground';
 import { expressionConfig } from './views/expression/playground';
+import { rangeConfig, dualRangeConfig } from './views/range/playground';
 import {
   colorPickerConfig,
   colorStopsConfig,
@@ -154,6 +155,11 @@ export const childRoutes = [
     name: 'EuiDescriptionList',
   },
   {
+    path: 'dualRange',
+    component: () => playground(dualRangeConfig()),
+    name: 'EuiDualRange',
+  },
+  {
     path: 'emptyPrompt',
     component: () => playground(emptyPromptConfig()),
     name: 'EuiEmptyPrompt',
@@ -232,6 +238,11 @@ export const childRoutes = [
     path: 'panel',
     component: () => playground(panelConfig()),
     name: 'EuiPanel',
+  },
+  {
+    path: 'range',
+    component: () => playground(rangeConfig()),
+    name: 'EuiRange',
   },
   {
     path: 'sideNav',
