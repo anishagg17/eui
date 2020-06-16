@@ -45,6 +45,7 @@ import { sideNavConfig } from './views/side_nav/playground';
 import { suggestConfig } from './views/suggest/playground';
 import { cardConfig } from './views/card/playground';
 import { codeEditorConfig } from './views/code_editor/playground';
+import { supperSelectConfig } from './views/super_select/playground';
 
 export const childRoutes = [
   {
@@ -221,6 +222,11 @@ export const childRoutes = [
     path: 'suggest',
     component: () => playground(suggestConfig()),
     name: 'EuiSuggest',
+  },
+  {
+    path: 'supperSelect',
+    component: () => playground(supperSelectConfig()),
+    name: 'EuiSuperSelect',
   },
   {
     path: 'stat',
