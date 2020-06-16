@@ -47,7 +47,10 @@ import { cardConfig } from './views/card/playground';
 import { codeEditorConfig } from './views/code_editor/playground';
 import { supperSelectConfig } from './views/super_select/playground';
 import { expressionConfig } from './views/expression/playground';
-import { colorPickerConfig } from './views/color_picker/playground';
+import {
+  colorPickerConfig,
+  colorStopsConfig,
+} from './views/color_picker/playground';
 
 export const childRoutes = [
   {
@@ -134,6 +137,11 @@ export const childRoutes = [
     path: 'colorPicker',
     component: () => playground(colorPickerConfig()),
     name: 'EuiColorPicker',
+  },
+  {
+    path: 'colorStops',
+    component: () => playground(colorStopsConfig()),
+    name: 'EuiColorStops',
   },
   {
     path: 'comment',
