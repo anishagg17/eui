@@ -44,6 +44,7 @@ import { keyPadMenuItemConfig } from './views/key_pad_menu/playground';
 import { sideNavConfig } from './views/side_nav/playground';
 import { suggestConfig } from './views/suggest/playground';
 import { cardConfig } from './views/card/playground';
+import { codeEditorConfig } from './views/code_editor/playground';
 
 export const childRoutes = [
   {
@@ -115,6 +116,11 @@ export const childRoutes = [
     path: 'codeBlock',
     component: () => playground(codeBlockConfig()),
     name: 'EuiCodeBlock',
+  },
+  {
+    path: 'codeEditor',
+    component: () => playground(codeEditorConfig()),
+    name: 'EuiCodeEditor',
   },
   {
     path: 'collapsibleNav',
