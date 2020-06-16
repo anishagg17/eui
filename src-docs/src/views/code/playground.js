@@ -61,6 +61,16 @@ export const codeConfig = () => {
     type: PropTypes.Boolean,
     value: false,
   };
+  propsToUse.paddingSize = {
+    ...propsToUse.paddingSize,
+    type: PropTypes.Custom,
+    hidden: true,
+  };
+  propsToUse.fontSize = {
+    ...propsToUse.fontSize,
+    type: PropTypes.Custom,
+    hidden: true,
+  };
 
   return {
     componentName: 'EuiCode',
