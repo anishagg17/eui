@@ -46,6 +46,7 @@ import { suggestConfig } from './views/suggest/playground';
 import { cardConfig } from './views/card/playground';
 import { codeEditorConfig } from './views/code_editor/playground';
 import { supperSelectConfig } from './views/super_select/playground';
+import { expressionConfig } from './views/expression/playground';
 
 export const childRoutes = [
   {
@@ -142,6 +143,11 @@ export const childRoutes = [
     path: 'emptyPrompt',
     component: () => playground(emptyPromptConfig()),
     name: 'EuiEmptyPrompt',
+  },
+  {
+    path: 'expression',
+    component: () => playground(expressionConfig()),
+    name: 'EuiExpression',
   },
   {
     path: 'facetButton',
