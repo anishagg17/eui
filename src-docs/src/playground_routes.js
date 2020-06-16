@@ -52,6 +52,7 @@ import {
   colorPickerConfig,
   colorStopsConfig,
 } from './views/color_picker/playground';
+import { superDatePickerConfig } from './views/super_date_picker/playground';
 
 export const childRoutes = [
   {
@@ -273,6 +274,11 @@ export const childRoutes = [
     path: 'spacer',
     component: () => playground(spacerConfig()),
     name: 'EuiSpacer',
+  },
+  {
+    path: 'superDatePicker',
+    component: () => playground(superDatePickerConfig()),
+    name: 'EuiSuperDatePicker',
   },
   {
     path: 'text',
