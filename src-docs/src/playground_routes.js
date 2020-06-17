@@ -54,6 +54,7 @@ import {
 } from './views/color_picker/playground';
 import { superDatePickerConfig } from './views/super_date_picker/playground';
 import popoverConfig from './views/popover/playground';
+import { tourConfig } from './views/tour/playground';
 
 export const childRoutes = [
   {
@@ -321,6 +322,11 @@ export const childRoutes = [
     path: 'toolTip',
     component: () => playground(toolTipConfig()),
     name: 'EuiToolTip',
+  },
+  {
+    path: 'tourStep',
+    component: () => playground(tourConfig()),
+    name: 'EuiTourStep',
   },
   {
     path: 'treeView',
