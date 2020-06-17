@@ -53,6 +53,7 @@ import {
   colorStopsConfig,
 } from './views/color_picker/playground';
 import { superDatePickerConfig } from './views/super_date_picker/playground';
+import popoverConfig from './views/popover/playground';
 
 export const childRoutes = [
   {
@@ -259,6 +260,11 @@ export const childRoutes = [
     path: 'supperSelect',
     component: () => playground(supperSelectConfig()),
     name: 'EuiSuperSelect',
+  },
+  {
+    path: 'popover',
+    component: () => playground(popoverConfig()),
+    name: 'EuiPopover',
   },
   {
     path: 'stat',
