@@ -55,6 +55,20 @@ import {
 import { superDatePickerConfig } from './views/super_date_picker/playground';
 import popoverConfig from './views/popover/playground';
 import { tourConfig } from './views/tour/playground';
+import {
+  fieldTextConfig,
+  fieldSearchConfig,
+  fieldNumberConfig,
+  selectConfig,
+  fieldPasswordConfig,
+  textAreaConfig,
+  filePickerConfig,
+  checkboxConfig,
+  checkboxGroupConfig,
+  radioConfig,
+  radioGroupConfig,
+  switchConfig,
+} from './views/form_controls/playground';
 
 export const childRoutes = [
   {
@@ -116,6 +130,16 @@ export const childRoutes = [
     path: 'card',
     component: () => playground(cardConfig()),
     name: 'EuiCard',
+  },
+  {
+    path: 'checkbox',
+    component: () => playground(checkboxConfig()),
+    name: 'EuiCheckbox',
+  },
+  {
+    path: 'checkboxGroup',
+    component: () => playground(checkboxGroupConfig()),
+    name: 'EuiCheckboxGroup',
   },
   {
     path: 'code',
@@ -183,6 +207,31 @@ export const childRoutes = [
     name: 'EuiFacetGroup',
   },
   {
+    path: 'fieldNumber',
+    component: () => playground(fieldNumberConfig()),
+    name: 'EuiFieldNumber',
+  },
+  {
+    path: 'fieldPassword',
+    component: () => playground(fieldPasswordConfig()),
+    name: 'EuiFieldPassword',
+  },
+  {
+    path: 'fieldSearch',
+    component: () => playground(fieldSearchConfig()),
+    name: 'EuiFieldSearch',
+  },
+  {
+    path: 'fieldText',
+    component: () => playground(fieldTextConfig()),
+    name: 'EuiFieldText',
+  },
+  {
+    path: 'filePicker',
+    component: () => playground(filePickerConfig()),
+    name: 'EuiFilePicker',
+  },
+  {
     path: 'flexGrid',
     component: () => playground(flexGridConfig()),
     name: 'EuiFlexGrid',
@@ -243,6 +292,16 @@ export const childRoutes = [
     name: 'EuiPanel',
   },
   {
+    path: 'radio',
+    component: () => playground(radioConfig()),
+    name: 'EuiRadio',
+  },
+  {
+    path: 'radioGroup',
+    component: () => playground(radioGroupConfig()),
+    name: 'EuiRadioGroup',
+  },
+  {
     path: 'range',
     component: () => playground(rangeConfig()),
     name: 'EuiRange',
@@ -268,6 +327,11 @@ export const childRoutes = [
     name: 'EuiPopover',
   },
   {
+    path: 'select',
+    component: () => playground(selectConfig()),
+    name: 'EuiSelect',
+  },
+  {
     path: 'stat',
     component: () => playground(statConfig()),
     name: 'EuiStat',
@@ -288,11 +352,20 @@ export const childRoutes = [
     name: 'EuiSuperDatePicker',
   },
   {
+    path: 'switch',
+    component: () => playground(switchConfig()),
+    name: 'EuiSwitch',
+  },
+  {
     path: 'text',
     component: () => playground(textConfig()),
     name: 'EuiText',
   },
-
+  {
+    path: 'textArea',
+    component: () => playground(textAreaConfig()),
+    name: 'EuiTextArea',
+  },
   {
     path: 'textColor',
     component: () => playground(textColorConfig()),
