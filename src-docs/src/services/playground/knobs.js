@@ -52,6 +52,7 @@ const Knob = ({
   options = {},
   description,
   placeholder,
+  custom,
 }) => {
   const [val, set] = useValueDebounce(globalVal, globalSet);
   switch (type) {
@@ -176,11 +177,28 @@ const Knob = ({
         );
       }
 
+    case PropTypes.Custom:
+      if (custom && custom.use && custom.valWhenOn) {
+        switch (custom.use) {
+          case 'switch':
+            return (
+              <EuiSwitch
+                id={name}
+                label=""
+                checked={typeof val !== 'undefined'}
+                onChange={e => {
+                  globalSet(e.target.checked ? custom.valWhenOn : undefined);
+                }}
+                compressed
+              />
+            );
+        }
+      }
+
     case PropTypes.ReactNode:
     case PropTypes.Function:
     case PropTypes.Array:
     case PropTypes.Object:
-    case PropTypes.Custom:
       return null;
     default:
       return assertUnreachable();
@@ -251,6 +269,7 @@ const KnobColumn = ({ state, knobNames, error, set }) => {
                 set={value => set(value, name)}
                 enumName={state[name].enumName}
                 defaultValue={state[name].defaultValue}
+                custom={state[name].custom}
               />
             </EuiTableRowCell>
           </EuiTableRow>
